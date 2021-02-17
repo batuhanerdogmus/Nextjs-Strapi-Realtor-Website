@@ -35,15 +35,25 @@ export const HeaderText = styled.div`
   }
 `;
 
+export const PortfolioText = styled.h1`
+  text-align: center;
+  font-size: 2.5rem;
+  background-color: gold;
+`;
+
 export const PortfolioContainer = styled.div`
   width: 100%;
-  height: 80vh;
+  height: 75vh;
   display: flex;
   position: relative;
-  padding-top: 2rem;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
   div {
-    width: 35%;
-    height: 87%;
+    min-width: 33vw;
+    height: 95%;
     overflow: hidden;
     position: relative;
 
@@ -53,7 +63,8 @@ export const PortfolioContainer = styled.div`
     }
     &:hover > h4,
     &:hover > p,
-    &:hover > h1 {
+    &:hover > h1,
+    &:hover > h3 {
       opacity: 1;
     }
   }
@@ -76,6 +87,7 @@ export const PortfolioContainer = styled.div`
   }
   h4,
   h1,
+  h3,
   p {
     z-index: 10;
     position: absolute;
@@ -99,24 +111,65 @@ export const PortfolioContainer = styled.div`
     text-transform: none;
     letter-spacing: 2px;
   }
-  button {
-    position: absolute;
-    top: 92%;
-    right: 50%;
-    font-size: 1.4rem;
-    padding: 6px 25px;
-    border-radius: 0;
-    transform: translateX(50%);
-    border-radius: 2rem;
-    color: var(--button-color);
-    background-color: var(--button-background-color);
-    box-sizing: border-box;
-    text-align: center;
-    border: 0;
-    transition: all 0.2s;
-    &:hover {
-      background-color: #4095c6;
-      font-size: 1.6rem;
+  h3 {
+    top: 70%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+`;
+export const StyledButton = styled.button`
+  position: relative;
+  left: 50%;
+  font-size: 1.4rem;
+  padding: 6px 25px;
+  border-radius: 0;
+  transform: translateX(-50%);
+  border-radius: 2rem;
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  box-sizing: border-box;
+  text-align: center;
+  border: 0;
+  margin-bottom: 2rem;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: #4095c6;
+    font-size: 1.6rem;
+  }
+`;
+
+export const SellContainer = styled.div`
+  text-align: center;
+  background-color: var(--background-color-light);
+  padding: 5rem 0;
+
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  form {
+    width: 100%;
+    input {
+      width: 30%;
+      padding: 2px;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 2px 22px;
+      margin-left: 1rem;
+      color: var(--button-color);
+      background-color: var(--button-background-color);
+      border: 0;
+      transition: all 0.2s;
+      &:hover {
+        background-color: #4095c6;
+        font-size: 1.3rem;
+      }
     }
   }
 `;

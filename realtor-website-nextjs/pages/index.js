@@ -1,19 +1,22 @@
 import Head from "next/head";
 import Layout from "../components/layout";
-import styled from "styled-components";
 import Link from "next/link";
 import {
   HeaderText,
   HeaderContainer,
+  PortfolioText,
   PortfolioContainer,
+  SellContainer,
+  StyledButton,
 } from "../styles/StyledIndex";
 
 export default function Home({ users }) {
   console.log(users);
+
   return (
     <Layout>
       <Head>
-        <title>Home Page</title>
+        <title>AnaSayfa</title>
       </Head>
       <div>
         {users.map((user) => (
@@ -23,7 +26,7 @@ export default function Home({ users }) {
                 <HeaderText>
                   <p>{asset.home}</p>
                   <p>{asset.aboutdescription}</p>
-                  <button>Contact Us</button>
+                  <button>İletişim</button>
                 </HeaderText>
                 <div>
                   {asset.profileImg.map((img) => (
@@ -37,28 +40,74 @@ export default function Home({ users }) {
                 </div>
               </HeaderContainer>
             ))}
+            <PortfolioText>Satışta Olan Portföyler</PortfolioText>
             <PortfolioContainer>
-              {user.portfolios.map((portfolio) => (
-                <div key={portfolio.id}>
-                  <img
-                    src={
-                      "http://localhost:1337" +
-                      portfolio.photos[0].formats.medium.url
-                    }
-                    alt={portfolio.description}
-                  />
-                  <span></span>
-                  <h4>{portfolio.title}</h4>
-                  <p>{portfolio.description}</p>
-                  <h1>MERAL EGEMEN</h1>
-                </div>
-              ))}
-              <Link href="/portfolio">
-                <a>
-                  <button>SEE MORE</button>
-                </a>
-              </Link>
+              {user.portfolios
+                .sort((a, b) => b.id - a.id)
+                .map((portfolio) => (
+                  <div
+                    key={portfolio.id}
+                    style={{ display: portfolio.onsale ? "flex" : "none" }}
+                  >
+                    <img
+                      src={
+                        "http://localhost:1337" +
+                        portfolio.photos[0].formats.medium.url
+                      }
+                      alt={portfolio.description}
+                    />
+                    <span></span>
+                    <h4>{portfolio.title}</h4>
+                    <p>{portfolio.description}</p>
+                    <h3>{portfolio.price} TL</h3>
+                    <h1>MERAL EGEMEN</h1>
+                  </div>
+                ))}
             </PortfolioContainer>
+            <Link href="/portfolio">
+              <a>
+                <StyledButton>Portföyler</StyledButton>
+              </a>
+            </Link>
+            <SellContainer>
+              <h1>Mülkünüzün Bugünkü Değerini Öğrenmek İstermisiniz?</h1>
+              <h3>
+                Bügünkü piyasa şartlarında mülkünüzün değerini öğrenmek için
+                hemen iletişime geçin...
+              </h3>
+              <form action="#">
+                <input type="email" placeholder="Email Adresiniz" />
+                <button>Gönder</button>
+              </form>
+            </SellContainer>
+            <PortfolioText>Sattığım Portföyler</PortfolioText>
+            <PortfolioContainer>
+              {user.portfolios
+                .sort((a, b) => b.id - a.id)
+                .map((portfolio) => (
+                  <div
+                    key={portfolio.id}
+                    style={{ display: !portfolio.onsale ? "flex" : "none" }}
+                  >
+                    <img
+                      src={
+                        "http://localhost:1337" +
+                        portfolio.photos[0].formats.medium.url
+                      }
+                      alt={portfolio.description}
+                    />
+                    <span></span>
+                    <h4>{portfolio.title}</h4>
+                    <p>{portfolio.description}</p>
+                    <h1>MERAL EGEMEN</h1>
+                  </div>
+                ))}
+            </PortfolioContainer>
+            <Link href="/portfolio">
+              <a>
+                <StyledButton>Portföyler</StyledButton>
+              </a>
+            </Link>
           </div>
         ))}
       </div>

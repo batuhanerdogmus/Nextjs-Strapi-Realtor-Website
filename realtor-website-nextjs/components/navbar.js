@@ -2,13 +2,17 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const Nav = styled.nav`
-  height: 80px;
+  height: 5rem;
   width: 100%;
   color: var(--text-color);
   background-color: var(--background-color-dark);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+
   a {
     margin-right: 1rem;
     font-size: 1.2rem;
@@ -27,16 +31,16 @@ const Navbar = () => {
       </div>
       <div>
         <Link href="/">
-          <a>Home</a>
+          <a>Anasayfa</a>
         </Link>
         <Link href="/about">
-          <a>About Me</a>
+          <a>Hakkımda</a>
         </Link>
         <Link href="/portfolio">
-          <a>Portfolio</a>
+          <a>Portföyler</a>
         </Link>
         <Link href="/contact">
-          <a>Contact</a>
+          <a>İletişim</a>
         </Link>
       </div>
     </Nav>

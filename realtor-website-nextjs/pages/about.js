@@ -5,7 +5,7 @@ export default function About() {
   return (
     <Layout>
       <Head>
-        <title>About Page</title>
+        <title>Hakkımda</title>
       </Head>
       <div>About page</div>
     </Layout>

@@ -1,37 +1,57 @@
 import Head from "next/head";
 import Layout from "../components/layout";
+import { PortfolioContainer } from "../styles/StyledIndex";
+import styled from "styled-components";
 
-const Portfolio = ({ portfolios }) => {
+const StyledPortfolio = styled(PortfolioContainer)`
+  margin-top: 6rem;
+  min-height: 80vh;
+`;
+
+const Portfolio = ({ users }) => {
   return (
     <Layout>
       <Head>
-        <title>Portfolio</title>
+        <title>Portföyler</title>
       </Head>
-      {portfolios.map((portfolio) => (
-        <div key={portfolio.id}>
-          <div>{portfolio.title}</div>
-          <div>{portfolio.description}</div>
-          <div>
-            {portfolio.photos.map((photo) => (
-              <div key={photo.id}>
-                <img
-                  src={"http://localhost:1337" + photo.formats.small.url}
-                  alt=""
-                />
-              </div>
-            ))}
+      <div>
+        {users.map((user) => (
+          <div key={user.id}>
+            <StyledPortfolio>
+              {user.portfolios
+                .sort((a, b) => b.id - a.id)
+                .map((portfolio) => (
+                  <div
+                    key={portfolio.id}
+                    style={{ display: portfolio.onsale ? "flex" : "none" }}
+                  >
+                    <img
+                      src={
+                        "http://localhost:1337" +
+                        portfolio.photos[0].formats.medium.url
+                      }
+                      alt={portfolio.description}
+                    />
+                    <span></span>
+                    <h4>{portfolio.title}</h4>
+                    <p>{portfolio.description}</p>
+                    <h3>{portfolio.price} TL</h3>
+                    <h1>MERAL EGEMEN</h1>
+                  </div>
+                ))}
+            </StyledPortfolio>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </Layout>
   );
 };
+
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:1337/portfolios`);
-  const portfolios = await res.json();
+  const res = await fetch(`http://localhost:1337/users`);
+  const users = await res.json();
   return {
-    props: { portfolios },
+    props: { users },
   };
 }
-
 export default Portfolio;
