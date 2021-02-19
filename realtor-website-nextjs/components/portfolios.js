@@ -87,10 +87,9 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
       </SectionStyled>
       <StyledPortfolio>
         {orderedPortfolios.map((portfolio) => (
-          <Link href={`/portfolios/${portfolio.id}`}>
+          <Link href={`/portfolios/${portfolio.id}`} key={portfolio.id}>
             <div
               className="container"
-              key={portfolio.id}
               style={{ display: portfolio.onsale ? "flex" : "none" }}
             >
               <div className="card-container">
