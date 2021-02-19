@@ -9,7 +9,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   z-index: 100;
   top: 0;
 
@@ -36,7 +36,7 @@ const Navbar = () => {
         <Link href="/about">
           <a>Hakkımda</a>
         </Link>
-        <Link href="/portfolio">
+        <Link href="/portfolios">
           <a>Portföyler</a>
         </Link>
         <Link href="/contact">

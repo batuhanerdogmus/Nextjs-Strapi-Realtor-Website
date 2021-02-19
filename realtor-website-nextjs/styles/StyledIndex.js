@@ -7,6 +7,7 @@ export const HeaderContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
 
   img {
     transform: rotateY(180deg) translateX(10%);
@@ -47,15 +48,16 @@ export const PortfolioContainer = styled.div`
   display: flex;
   position: relative;
   overflow-y: hidden;
-
+  justify-content: space-between;
   &::-webkit-scrollbar {
     display: none;
   }
   div {
-    min-width: 33vw;
+    min-width: 31.8vw;
     height: 95%;
     overflow: hidden;
     position: relative;
+    margin-left: 1rem;
 
     &:hover > span {
       background-color: rgba(0, 0, 0, 0.5);
@@ -70,7 +72,7 @@ export const PortfolioContainer = styled.div`
   }
   img {
     position: absolute;
-    width: 98%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     transition: all ease 0.7s;
