@@ -1,4 +1,3 @@
-import { Facebook, Instagram, LinkedIn } from "@material-ui/icons";
 import styled from "styled-components";
 
 const StyledFooter = styled.div`
@@ -22,13 +21,13 @@ const Footer = () => {
         <div>
           <ul>
             <li>
-              <Facebook fontSize="large" />
+              <p>facebook</p>
             </li>
             <li>
-              <Instagram fontSize="large" />
+              <p>facebook</p>
             </li>
             <li>
-              <LinkedIn fontSize="large" />
+              <p>facebook</p>
             </li>
             <p>Sosyal Medya İle Takipte Kalın</p>
           </ul>

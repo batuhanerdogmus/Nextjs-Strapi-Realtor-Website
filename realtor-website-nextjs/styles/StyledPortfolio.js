@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledPortfolio = styled.div`
+export const StyledPortfolios = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 1rem;
@@ -122,6 +122,47 @@ export const SectionStyled = styled.div`
         align-items: center;
         justify-content: center;
       }
+    }
+  }
+`;
+export const StyledPortfolio = styled.div`
+  margin: 5rem 0 0 5rem;
+  .container {
+    width: 33vw;
+    height: 70vh;
+    .card-container {
+      width: 100%;
+      height: 95%;
+    }
+  }
+  .keen-slider {
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .arrow {
+    display: flex;
+    position: relative;
+    bottom: 50%;
+  }
+  .arrow-left {
+    float: left;
+  }
+  .arrow-right {
+    float: right;
+  }
+  .dots {
+    text-align: center;
+    .dot {
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      padding: 0;
+      margin: 0 2px;
     }
   }
 `;
