@@ -40,4 +40,5 @@ a {
   box-sizing: border-box;
   color: inherit;
   font: inherit;
+  font-family: var(--font-family);
 }
