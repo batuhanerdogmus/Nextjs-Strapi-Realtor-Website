@@ -75,7 +75,11 @@ const PortfolioDetail = ({ portfolio }) => {
                     {portfolio.virtual ? (
                       <>
                         <h4>Sanal tur için</h4>
-                        <a target="_blank" href={portfolio.virtual}>
+                        <a
+                          target="_blank"
+                          href={portfolio.virtual}
+                          style={{ color: "revert" }}
+                        >
                           Tıklayın
                         </a>
                       </>
