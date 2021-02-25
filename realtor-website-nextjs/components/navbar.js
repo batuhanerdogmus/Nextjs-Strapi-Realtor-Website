@@ -13,6 +13,7 @@ const Nav = styled.nav`
   position: fixed;
   z-index: 100;
   top: 0;
+  opacity: 0.9;
   .logo {
     a {
       font-size: 1.3rem;

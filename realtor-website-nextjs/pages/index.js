@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
+import picture from "../img/Picture1.jpg";
 import {
-  HeaderText,
   HeaderContainer,
   PortfolioText,
   PortfolioContainer,
@@ -11,8 +11,6 @@ import {
 } from "../styles/StyledIndex";
 
 export default function Home({ users }) {
-  console.log(users);
-
   return (
     <Layout>
       <Head>
@@ -23,20 +21,53 @@ export default function Home({ users }) {
           <div key={user.id}>
             {user.assets.map((asset) => (
               <HeaderContainer key={asset.id}>
-                <HeaderText>
-                  <p>{asset.home}</p>
-                  <p>{asset.aboutdescription}</p>
-                  <button>İletişim</button>
-                </HeaderText>
-                <div>
-                  {asset.profileImg.map((img) => (
-                    <div key={img.id}>
-                      <img
-                        src={"http://localhost:1337" + img.formats.small.url}
-                        alt=""
-                      />
+                <div className="header">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Vero omnis pariatur quas natus placeat, voluptatem totam
+                    incidunt id dolorum adipisci earum. Maxime voluptatem soluta
+                    atque, voluptates excepturi dolor velit ipsa?
+                  </p>
+                </div>
+                <div className="selection">
+                  <div className="section-container">
+                    <div className="section1">
+                      <div className="section-img">
+                        {asset.profileImg.map((img) => (
+                          <img
+                            style={{ objectFit: "contain" }}
+                            key={img.id}
+                            src={
+                              "http://localhost:1337" + img.formats.small.url
+                            }
+                            alt=""
+                          />
+                        ))}
+                      </div>
+                      <div className="section-text">
+                        <p>{asset.home}</p>
+                        <p>{asset.aboutdescription}</p>
+                        <button>İletişim</button>
+                      </div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="section-container">
+                    <div className="section1">
+                      <div className="section-text">
+                        <p>Birlikte Çalışalım</p>
+                        <p>
+                          Lorem, ipsum dolor sit amet consectetur adipisicing
+                          elit. Commodi iste fugiat incidunt veniam molestiae.
+                          Perferendis architecto sunt, modi maxime laboriosam
+                          totam ab praesentium nisi voluptatem. Quo ad accusamus
+                          eligendi possimus!
+                        </p>
+                      </div>
+                      <div className="section-img">
+                        <img src={picture} alt="" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </HeaderContainer>
             ))}
@@ -45,23 +76,29 @@ export default function Home({ users }) {
               {user.portfolios
                 .sort((a, b) => b.id - a.id)
                 .map((portfolio) => (
-                  <div
-                    key={portfolio.id}
-                    style={{ display: portfolio.onsale ? "flex" : "none" }}
-                  >
-                    <img
-                      src={
-                        "http://localhost:1337" +
-                        portfolio.photos[0].formats.medium.url
-                      }
-                      alt={portfolio.description}
-                    />
-                    <span></span>
-                    <h4>{portfolio.title}</h4>
-                    <p>{portfolio.description}</p>
-                    <h3>{portfolio.price} TL</h3>
-                    <h1>MERAL EGEMEN</h1>
-                  </div>
+                  <Link href={`/portfolios/${portfolio.id}`} key={portfolio.id}>
+                    <div
+                      className="portfolio-card"
+                      key={portfolio.id}
+                      style={{ display: portfolio.onsale ? "flex" : "none" }}
+                    >
+                      <img
+                        src={
+                          "http://localhost:1337" +
+                          portfolio.photos[0].formats.medium.url
+                        }
+                        alt={portfolio.title}
+                      />
+                      <span></span>
+                      <div className="content">
+                        <h2>{portfolio.title}</h2>
+                        <h3>{portfolio.price} TL</h3>
+                        <p>Oda Sayısı: {portfolio.room}</p>
+                        <p>Brüt Alan: {portfolio.area}m²</p>
+                      </div>
+                      <h4>MERAL EGEMEN</h4>
+                    </div>
+                  </Link>
                 ))}
             </PortfolioContainer>
             <Link href="/portfolio">
@@ -86,6 +123,7 @@ export default function Home({ users }) {
                 .sort((a, b) => b.id - a.id)
                 .map((portfolio) => (
                   <div
+                    className="portfolio-card"
                     key={portfolio.id}
                     style={{ display: !portfolio.onsale ? "flex" : "none" }}
                   >
@@ -94,20 +132,19 @@ export default function Home({ users }) {
                         "http://localhost:1337" +
                         portfolio.photos[0].formats.medium.url
                       }
-                      alt={portfolio.description}
+                      alt={portfolio.title}
                     />
                     <span></span>
-                    <h4>{portfolio.title}</h4>
-                    <p>{portfolio.description}</p>
-                    <h1>MERAL EGEMEN</h1>
+                    <div className="content">
+                      <h2>{portfolio.title}</h2>
+                      <h3>{portfolio.price} TL</h3>
+                      <p>Oda Sayısı: {portfolio.room}</p>
+                      <p>Brüt Alan: {portfolio.area}m²</p>
+                    </div>
+                    <h4>MERAL EGEMEN</h4>
                   </div>
                 ))}
             </PortfolioContainer>
-            <Link href="/portfolio">
-              <a>
-                <StyledButton>Portföyler</StyledButton>
-              </a>
-            </Link>
           </div>
         ))}
       </div>
