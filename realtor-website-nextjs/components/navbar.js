@@ -83,9 +83,6 @@ const Nav = styled.nav`
   }
 `;
 
-// const NavbarHandler = () => {
-//   setShowNavbar(!showNavbar)
-// }
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
 

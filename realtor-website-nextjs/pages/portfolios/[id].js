@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { StyledPortfolio } from "../../styles/StyledPortfolio";
 import ReactMarkdown from "react-markdown";
-import SliderContainer from "../../components/slider";
+import ImageSlider from "../../components/ImageSlider";
 
 const PortfolioDetail = ({ portfolio }) => {
   return (
@@ -12,7 +12,7 @@ const PortfolioDetail = ({ portfolio }) => {
       </Head>
       <StyledPortfolio>
         <div className="container">
-          <SliderContainer portfolio={portfolio} />
+          <ImageSlider portfolio={portfolio} />
           <div className="card">
             <h1>{portfolio.title}</h1>
             <div className="logo-wrapper">

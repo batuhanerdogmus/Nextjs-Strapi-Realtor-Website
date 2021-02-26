@@ -28,7 +28,7 @@ export const HeaderContainer = styled.div`
   }
   .section1 {
     height: 100%;
-    width: 56rem;
+    width: 77rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@ export const HeaderContainer = styled.div`
     color: white;
   }
   .section-img {
-    width: 27rem;
+    width: 54rem;
     height: 100%;
     img {
       width: 100%;
@@ -56,6 +56,13 @@ export const HeaderContainer = styled.div`
     align-items: center;
     height: 100%;
 
+    h2 {
+      max-width: 78%;
+    }
+    p {
+      max-width: 85%;
+    }
+
     button {
       width: 8rem;
       color: var(--button-color);
@@ -72,9 +79,26 @@ export const HeaderContainer = styled.div`
       }
     }
   }
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1270px) {
     .section-text {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+    }
+    .section1 {
+      width: 54rem;
+    }
+    .section-img {
+      width: 37.8rem;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .section1 {
+      width: 36rem;
+    }
+    .section-img {
+      width: 25.2rem;
+    }
+    .section-text {
+      font-size: 1rem;
       button {
         width: 7rem;
       }
@@ -98,12 +122,13 @@ export const HeaderContainer = styled.div`
       width: 100%;
       height: 18rem;
     }
-  }
-  .section-text {
-    width: 100%;
-    font-size: 0.9rem;
-    button {
-      margin-bottom: 1rem;
+
+    .section-text {
+      width: 100%;
+      font-size: 0.9rem;
+      button {
+        margin-bottom: 1rem;
+      }
     }
   }
 `;

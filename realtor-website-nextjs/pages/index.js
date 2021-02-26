@@ -45,7 +45,7 @@ export default function Home({ users }) {
                         ))}
                       </div>
                       <div className="section-text">
-                        <p>{asset.home}</p>
+                        <h2>{asset.home}</h2>
                         <p>{asset.aboutdescription}</p>
                         <button>İletişim</button>
                       </div>
@@ -54,7 +54,7 @@ export default function Home({ users }) {
                   <div className="section-container">
                     <div className="section1">
                       <div className="section-text">
-                        <p>Birlikte Çalışalım</p>
+                        <h2>Birlikte Çalışalım</h2>
                         <p>
                           Lorem, ipsum dolor sit amet consectetur adipisicing
                           elit. Commodi iste fugiat incidunt veniam molestiae.

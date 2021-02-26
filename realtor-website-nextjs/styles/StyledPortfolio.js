@@ -263,26 +263,6 @@ export const StyledPortfolio = styled.div`
         font-weight: bold;
       }
     }
-    .full-size-container {
-      position: absolute;
-      min-width: 100vw;
-      min-height: 100vh;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: black;
-    }
-    .full-size-slider {
-      width: 80%;
-      height: 80%;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
     .logo-wrapper {
       text-align: center;
       width: 26rem;
@@ -337,42 +317,6 @@ export const StyledPortfolio = styled.div`
       font-size: revert;
       font-weight: revert;
       text-align: center;
-    }
-  }
-
-  .card-container {
-    margin: 2rem 0 0 0;
-    width: 40vw;
-    height: 70vh;
-    .keen-slider {
-      width: 100%;
-      height: 95%;
-    }
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .arrow {
-      display: flex;
-      position: relative;
-      bottom: 50%;
-    }
-    .arrow-left {
-      float: left;
-    }
-    .arrow-right {
-      float: right;
-    }
-    .dots {
-      text-align: center;
-      .dot {
-        border-radius: 50%;
-        height: 10px;
-        width: 10px;
-        padding: 0;
-        margin: 0 2px;
-      }
     }
   }
 `;

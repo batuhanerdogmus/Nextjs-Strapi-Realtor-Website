@@ -9,6 +9,7 @@ const StyledFooter = styled.div`
   justify-content: space-around;
   text-align: center;
   align-items: center;
+  margin-top: 1rem;
   li {
     list-style: none;
     display: inline-block;
@@ -16,7 +17,7 @@ const StyledFooter = styled.div`
 `;
 const Footer = () => {
   return (
-    <div>
+    <>
       <StyledFooter>
         <div>
           <ul>
@@ -45,7 +46,7 @@ const Footer = () => {
         </div>
       </StyledFooter>
       <footer style={{ textAlign: "center" }}>design by BatuhanErdogmus</footer>
-    </div>
+    </>
   );
 };
 
