@@ -66,14 +66,14 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
     if (e.target.value === "Oda Sayısı") {
       setRoomFilter(null);
     } else {
-      setRoomFilter(e.target.value);
+      setRoomFilter(e.target.value.split(" ")[0]);
     }
   };
   const TypeOnClickHandler = (e) => {
     if (e.target.value === "Konut Tipi") {
       setTypeFilter(null);
     } else {
-      setTypeFilter(e.target.value);
+      setTypeFilter(e.target.value.split(" ")[0]);
     }
   };
   const filterdByType = typeFilter
@@ -87,6 +87,17 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
   const showFilterHandler = () => {
     setShowFilter(!showFilter);
   };
+
+  const currencyFormat = (num) => {
+    return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + "TL";
+  };
+
+  const types = portfolio.map((portfolio) => portfolio.type);
+  const uniqueTypes = [...new Set(types)];
+
+  const roomTypes = portfolio.map((portfolio) => portfolio.room);
+  const uniqueRoomTypes = [...new Set(roomTypes)];
+
   return (
     <div>
       <SectionStyled>
@@ -112,18 +123,26 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
             <div className="box-container" onClick={SelectOnClickHandler}>
               <select className="room" id="room">
                 <option>Oda Sayısı</option>
-                <option>1+1</option>
-                <option>2+1</option>
-                <option>3+1</option>
-                <option>4+1</option>
+                {uniqueRoomTypes.map((roomType) => (
+                  <option key={roomType}>
+                    {roomType} (
+                    {
+                      roomTypes.filter((roomTypes) => roomTypes === roomType)
+                        .length
+                    }
+                    )
+                  </option>
+                ))}
               </select>
             </div>
             <div className="box-container" onClick={TypeOnClickHandler}>
               <select className="type" id="type">
                 <option>Konut Tipi</option>
-                <option>Apartman</option>
-                <option>Site</option>
-                <option>Müstakil</option>
+                {uniqueTypes.map((type) => (
+                  <option key={type}>
+                    {type} ( {types.filter((types) => types === type).length})
+                  </option>
+                ))}
               </select>
             </div>
             <div className="box-container" onClick={orderHandler}>
@@ -153,7 +172,7 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
                 <span></span>
                 <div className="content">
                   <h2>{portfolio.title}</h2>
-                  <h3>{portfolio.price} TL</h3>
+                  <h3>{currencyFormat(parseInt(portfolio.price))}</h3>
                   <p>Oda Sayısı: {portfolio.room}</p>
                   <p>Brüt Alan: {portfolio.area}m²</p>
                 </div>
