@@ -11,6 +11,10 @@ import {
 } from "../styles/StyledIndex";
 
 export default function Home({ users }) {
+  const currencyFormat = (num) => {
+    return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") + "TL";
+  };
+
   return (
     <Layout>
       <Head>
@@ -92,7 +96,7 @@ export default function Home({ users }) {
                       <span></span>
                       <div className="content">
                         <h2>{portfolio.title}</h2>
-                        <h3>{portfolio.price} TL</h3>
+                        <h3>{currencyFormat(parseInt(portfolio.price))}</h3>
                         <p>Oda Sayısı: {portfolio.room}</p>
                         <p>Brüt Alan: {portfolio.area}m²</p>
                       </div>
@@ -137,7 +141,7 @@ export default function Home({ users }) {
                     <span></span>
                     <div className="content">
                       <h2>{portfolio.title}</h2>
-                      <h3>{portfolio.price} TL</h3>
+                      <h3>{currencyFormat(parseInt(portfolio.price))}</h3>
                       <p>Oda Sayısı: {portfolio.room}</p>
                       <p>Brüt Alan: {portfolio.area}m²</p>
                     </div>
@@ -145,6 +149,9 @@ export default function Home({ users }) {
                   </div>
                 ))}
             </PortfolioContainer>
+            <div>
+              <input type="range" min="0" max="200" />
+            </div>
           </div>
         ))}
       </div>

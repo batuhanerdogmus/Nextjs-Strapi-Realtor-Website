@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledSlider = styled.div`
   .full-size-slider {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 100;
     top: 0;
     left: 0;
@@ -36,9 +36,8 @@ export const StyledSlider = styled.div`
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 1000px;
+    width: 100%;
     height: 100%;
-    border-radius: 10px;
     object-fit: contain;
   }
 

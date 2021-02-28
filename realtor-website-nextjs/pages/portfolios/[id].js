@@ -2,9 +2,12 @@ import Head from "next/head";
 import Layout from "../../components/layout";
 import { StyledPortfolio } from "../../styles/StyledPortfolio";
 import ReactMarkdown from "react-markdown";
-import ImageSlider from "../../components/ImageSlider";
+import KeyboardEvent from "../../components/useKeyboardEvent";
 
 const PortfolioDetail = ({ portfolio }) => {
+  const currencyFormat = (num) => {
+    return num.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + "TL";
+  };
   return (
     <Layout>
       <Head>
@@ -12,7 +15,7 @@ const PortfolioDetail = ({ portfolio }) => {
       </Head>
       <StyledPortfolio>
         <div className="container">
-          <ImageSlider portfolio={portfolio} />
+          <KeyboardEvent portfolio={portfolio} />
           <div className="card">
             <h1>{portfolio.title}</h1>
             <div className="logo-wrapper">

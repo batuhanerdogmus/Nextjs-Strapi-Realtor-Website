@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { StyledSlider } from "../styles/StyledImageSlider";
 
-const ImageSlider = ({ portfolio }) => {
+const ImageSlider = ({ portfolio, pressedKeys }) => {
   const [current, setCurrent] = useState(0);
   const [fullSize, setFullSize] = useState(false);
 
@@ -15,6 +15,7 @@ const ImageSlider = ({ portfolio }) => {
     onSwipedRight: () => prevSlide(),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true,
+    trackTouch: true,
   });
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
@@ -25,6 +26,18 @@ const ImageSlider = ({ portfolio }) => {
   if (!Array.isArray || length <= 0) {
     return null;
   }
+
+  useEffect(() => {
+    if (pressedKeys[0] === "Escape") {
+      setFullSize(false);
+    }
+    if (pressedKeys[0] === "ArrowRight") {
+      nextSlide();
+    }
+    if (pressedKeys[0] === "ArrowLeft") {
+      prevSlide();
+    } else return null;
+  }, [pressedKeys]);
 
   return (
     <StyledSlider>
