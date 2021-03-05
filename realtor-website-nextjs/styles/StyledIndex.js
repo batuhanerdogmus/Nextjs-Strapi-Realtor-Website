@@ -10,7 +10,7 @@ export const HeaderContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    color: white;
+    color: var(--text-color-light);
     margin-bottom: 1.7rem;
 
     p {
@@ -41,6 +41,7 @@ export const HeaderContainer = styled.div`
     img {
       width: 100%;
       height: 100%;
+      background-color: #424242;
     }
   }
   .section-text {
@@ -48,7 +49,7 @@ export const HeaderContainer = styled.div`
     font-size: 1.5rem;
     width: 70%;
     max-width: 60rem;
-    color: var(--text-color-secondary);
+    color: var(--text-color);
     text-align: center;
     justify-content: center;
     display: flex;
@@ -64,7 +65,7 @@ export const HeaderContainer = styled.div`
     }
 
     button {
-      width: 8rem;
+      font-size: 1.3rem;
       color: var(--button-color);
       background-color: var(--button-background-color);
       display: inline-block;
@@ -75,7 +76,9 @@ export const HeaderContainer = styled.div`
       border: 0;
       transition: all 0.2s;
       &:hover {
-        background-color: #4095c6;
+        background-color: var(--button-hover-color);
+        font-size: 1.4rem;
+        letter-spacing: 2px;
       }
     }
   }
@@ -136,7 +139,8 @@ export const HeaderContainer = styled.div`
 export const PortfolioText = styled.h1`
   text-align: center;
   font-size: 2.5rem;
-  background-color: gold;
+  background-color: var(--background-color);
+  letter-spacing: 5px;
 `;
 
 export const PortfolioContainer = styled.div`
@@ -284,8 +288,9 @@ export const StyledButton = styled.button`
   transition: all 0.2s;
 
   &:hover {
-    background-color: #4095c6;
-    font-size: 1.6rem;
+    background-color: var(--button-hover-color);
+    font-size: 1.5em;
+    letter-spacing: 2px;
   }
   @media screen and (max-width: 1100px) {
     font-size: 1.2rem;
@@ -313,7 +318,6 @@ export const SellContainer = styled.div`
   }
 
   form {
-    max-width: 60rem;
     input {
       width: 30%;
       padding: 2px;
@@ -327,8 +331,9 @@ export const SellContainer = styled.div`
       border: 0;
       transition: all 0.2s;
       &:hover {
-        background-color: #4095c6;
+        background-color: var(--button-hover-color);
         font-size: 1.3rem;
+        letter-spacing: 2px;
       }
     }
   }

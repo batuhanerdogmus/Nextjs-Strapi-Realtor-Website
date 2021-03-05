@@ -1,14 +1,13 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Link from "next/link";
-import picture from "../img/Picture1.jpg";
 import {
-  HeaderContainer,
   PortfolioText,
   PortfolioContainer,
   SellContainer,
   StyledButton,
 } from "../styles/StyledIndex";
+import Header from "../components/header";
 
 export default function Home({ users }) {
   const currencyFormat = (num) => {
@@ -23,58 +22,7 @@ export default function Home({ users }) {
       <div>
         {users.map((user) => (
           <div key={user.id}>
-            {user.assets.map((asset) => (
-              <HeaderContainer key={asset.id}>
-                <div className="header">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vero omnis pariatur quas natus placeat, voluptatem totam
-                    incidunt id dolorum adipisci earum. Maxime voluptatem soluta
-                    atque, voluptates excepturi dolor velit ipsa?
-                  </p>
-                </div>
-                <div className="selection">
-                  <div className="section-container">
-                    <div className="section1">
-                      <div className="section-img">
-                        {asset.profileImg.map((img) => (
-                          <img
-                            style={{ objectFit: "contain" }}
-                            key={img.id}
-                            src={
-                              "http://localhost:1337" + img.formats.small.url
-                            }
-                            alt=""
-                          />
-                        ))}
-                      </div>
-                      <div className="section-text">
-                        <h2>{asset.home}</h2>
-                        <p>{asset.aboutdescription}</p>
-                        <button>İletişim</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="section-container">
-                    <div className="section1">
-                      <div className="section-text">
-                        <h2>Birlikte Çalışalım</h2>
-                        <p>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing
-                          elit. Commodi iste fugiat incidunt veniam molestiae.
-                          Perferendis architecto sunt, modi maxime laboriosam
-                          totam ab praesentium nisi voluptatem. Quo ad accusamus
-                          eligendi possimus!
-                        </p>
-                      </div>
-                      <div className="section-img">
-                        <img src={picture} alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </HeaderContainer>
-            ))}
+            <Header user={user} />
             <PortfolioText>Satışta Olan Portföyler</PortfolioText>
             <PortfolioContainer>
               {user.portfolios
@@ -106,9 +54,7 @@ export default function Home({ users }) {
                 ))}
             </PortfolioContainer>
             <Link href="/portfolio">
-              <a>
-                <StyledButton>Portföyler</StyledButton>
-              </a>
+              <StyledButton>Portföyler</StyledButton>
             </Link>
             <SellContainer>
               <h1>Mülkünüzün Bugünkü Değerini Öğrenmek İstermisiniz?</h1>
@@ -149,9 +95,6 @@ export default function Home({ users }) {
                   </div>
                 ))}
             </PortfolioContainer>
-            <div>
-              <input type="range" min="0" max="200" />
-            </div>
           </div>
         ))}
       </div>

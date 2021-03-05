@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Bars from "../img/bars.png";
 const Nav = styled.nav`
@@ -58,11 +58,13 @@ const Nav = styled.nav`
     .logo {
       width: 100%;
       position: absolute;
+      justify-content: center;
+      display: flex;
 
       a {
         font-size: 1.5rem;
-        display: flex;
-        justify-content: center;
+        margin-left: 0;
+        z-index: 100;
       }
     }
     .navBarIcon {
@@ -85,7 +87,28 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [theme, setTheme] = useState("light");
 
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      localStorage.getItem("theme")
+    );
+    setTheme(localStorage.getItem("theme"));
+    setTheme(localStorage.setItem("theme", "light"));
+  }, []);
+  const switchTheme = () => {
+    if (theme === "light") {
+      saveTheme("dark");
+    } else {
+      saveTheme("light");
+    }
+  };
+  const saveTheme = (theme) => {
+    setTheme(theme);
+    localStorage.setItem("theme", theme);
+    document.documentElement.setAttribute("data-theme", theme);
+  };
   return (
     <Nav>
       <div className="logo">
@@ -97,6 +120,8 @@ const Navbar = () => {
         <img src={Bars} alt="" />
       </div>
       <div className={`navLinks ${showNavbar ? "navActive" : ""}`}>
+        <button className="theme" onClick={switchTheme}></button>
+
         <Link href="/">
           <a>Anasayfa</a>
         </Link>

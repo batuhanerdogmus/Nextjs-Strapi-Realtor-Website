@@ -41,7 +41,10 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
 
   return (
     <StyledSlider>
-      <div className={fullSize ? "full-size-slider" : ""}>
+      <div
+        className={fullSize ? "full-size-slider" : ""}
+        onClick={fullSizeHandler}
+      >
         <div className="slider">
           <div className="left-arrow" onClick={prevSlide}>
             <svg width="20" height="20" viewBox="0 0 24 24">
@@ -62,7 +65,6 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
               >
                 <img
                   {...handlers}
-                  onClick={fullSizeHandler}
                   src={"http://localhost:1337" + slide.formats.small.url}
                   alt="image"
                   className="image"

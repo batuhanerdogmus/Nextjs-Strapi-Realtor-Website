@@ -3,12 +3,16 @@
 :root {
   --text-color: #012331;
   --text-color-secondary: #124a63;
+  --text-color-light: #eeeeee;
+
   --primary-color: #3ed6d6;
   --background-color: #f9f9f9;
   --background-color-dark: #ccd5da;
+  --background-color-secondary: #00000085;
   --background-color-light: #eef3f6;
   --button-color: #edf0f1;
   --button-background-color: #0088a9;
+  --button-hover-color: #2d698b;
 
   --font-family: "Poppins", "sans-serif";
   --box-shadow: 8px 2px 8px rgba(0, 0, 0, 0.05);
@@ -17,9 +21,10 @@
   --text-color: #f0f0f0;
   --text-color-secondary: #b3c5cd;
   --primary-color: #21b6b7;
-  --background-color: #252329;
-  --background-color-dark: #3c393f;
-  --background-color-light: #120f13;
+  --background-color: #767577;
+  --background-color-dark: #24252a;
+  --background-color-light: #3c393f;
+  --button-background-color: #006c86;
 }
 
 html,
