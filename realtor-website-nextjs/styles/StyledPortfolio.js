@@ -16,8 +16,15 @@ export const StyledPortfolios = styled.div`
   .card-container {
     position: relative;
     width: 100%;
+    box-shadow: -5px 8px 9px -7px;
     overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
 
+    &:hover {
+      box-shadow: -5px 8px 9px -3px;
+      transform: scale(1.01);
+    }
     &:hover > span {
       background-color: rgba(0, 0, 0, 0.3);
       top: 0;
@@ -339,6 +346,7 @@ export const StyledPortfolio = styled.div`
   .contact {
     display: flex;
     margin: 2rem 0;
+    box-shadow: 0px 0px 10px -6px;
   }
   .info {
     text-align: left;
@@ -349,6 +357,7 @@ export const StyledPortfolio = styled.div`
     }
   }
   .img-container {
+    display: flex;
     img {
       max-width: 10rem;
     }
@@ -391,6 +400,8 @@ export const StyledPortfolio = styled.div`
   @media screen and (max-width: 450px) {
     .contact {
       flex-direction: column;
+      align-items: center;
+      box-shadow: none;
     }
     .container {
       align-items: flex-start;

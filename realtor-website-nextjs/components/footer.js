@@ -45,7 +45,9 @@ const Footer = () => {
           </address>{" "}
         </div>
       </StyledFooter>
-      <footer style={{ textAlign: "center" }}>design by BatuhanErdogmus</footer>
+      <footer style={{ textAlign: "center" }}>
+        designed by @batuhanErdogmus
+      </footer>
     </>
   );
 };

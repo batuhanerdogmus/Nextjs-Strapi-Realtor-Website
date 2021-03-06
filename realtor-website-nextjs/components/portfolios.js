@@ -76,13 +76,13 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
       setTypeFilter(e.target.value.split(" ")[0]);
     }
   };
-  const filterdByType = typeFilter
+  const filteredByType = typeFilter
     ? orderedPortfolios.filter((portfolio) => portfolio.type === typeFilter)
     : orderedPortfolios;
 
-  const filterdByRoom = roomFilter
-    ? filterdByType.filter((portfolio) => portfolio.room === roomFilter)
-    : filterdByType;
+  const filteredByRoom = roomFilter
+    ? filteredByType.filter((portfolio) => portfolio.room === roomFilter)
+    : filteredByType;
 
   const showFilterHandler = () => {
     setShowFilter(!showFilter);
@@ -93,9 +93,11 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
   };
 
   const types = portfolio.map((portfolio) => portfolio.type);
+  const fiterdTypes = filteredByRoom.map((portfolio) => portfolio.type);
   const uniqueTypes = [...new Set(types)];
 
   const roomTypes = portfolio.map((portfolio) => portfolio.room);
+  const filtrdRoomTypes = filteredByRoom.map((portfolio) => portfolio.room);
   const uniqueRoomTypes = [...new Set(roomTypes)];
 
   return (
@@ -127,8 +129,9 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
                   <option key={roomType}>
                     {roomType} (
                     {
-                      roomTypes.filter((roomTypes) => roomTypes === roomType)
-                        .length
+                      (!roomFilter ? filtrdRoomTypes : roomTypes).filter(
+                        (roomTypes) => roomTypes === roomType
+                      ).length
                     }
                     )
                   </option>
@@ -140,7 +143,13 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
                 <option>Konut Tipi</option>
                 {uniqueTypes.map((type) => (
                   <option key={type}>
-                    {type} ( {types.filter((types) => types === type).length})
+                    {type} (
+                    {
+                      (!typeFilter ? fiterdTypes : types).filter(
+                        (types) => types === type
+                      ).length
+                    }
+                    )
                   </option>
                 ))}
               </select>
@@ -155,7 +164,7 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
         </div>
       </SectionStyled>
       <StyledPortfolios>
-        {filterdByRoom.map((portfolio) => (
+        {filteredByRoom.map((portfolio) => (
           <Link href={`/portfolios/${portfolio.id}`} key={portfolio.id}>
             <div
               className="container"

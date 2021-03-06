@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import gardenImg from "../img/IMG_2776.jpg";
+
 export const HeaderContainer = styled.div`
   .header {
     background-image: url(${gardenImg});
     background-size: cover;
+    background-position: center;
     height: 80vh;
     width: 100%;
     display: flex;
@@ -154,12 +156,20 @@ export const PortfolioContainer = styled.div`
     display: none;
   }
   .portfolio-card {
-    min-width: 31.8vw;
+    min-width: 24.8vw;
     height: 95%;
     overflow: hidden;
     position: relative;
     margin-left: 1rem;
+    cursor: pointer;
 
+    box-shadow: -5px 8px 9px -7px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      box-shadow: -5px 8px 9px -3px;
+      transform: scale(1.01);
+    }
     &:hover > span {
       background-color: rgba(0, 0, 0, 0.3);
       top: 0;
@@ -220,15 +230,13 @@ export const PortfolioContainer = styled.div`
     text-transform: none;
     letter-spacing: 2px;
   }
-
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1400px) {
     .content {
       top: 86%;
       opacity: 1;
     }
     .portfolio-card {
-      min-width: 48vw;
-
+      min-width: 31.8vw;
       &:hover > .content {
         top: 7%;
       }
@@ -261,6 +269,11 @@ export const PortfolioContainer = styled.div`
       top: 83%;
     }
   }
+  @media screen and (max-width: 900px) {
+    .portfolio-card {
+      min-width: 48vw;
+    }
+  }
 
   @media screen and (max-width: 600px) {
     .portfolio-card {
@@ -274,7 +287,7 @@ export const PortfolioContainer = styled.div`
 export const StyledButton = styled.button`
   position: relative;
   left: 50%;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding: 6px 25px;
   border-radius: 0;
   transform: translateX(-50%);
@@ -285,12 +298,16 @@ export const StyledButton = styled.button`
   text-align: center;
   border: 0;
   margin-bottom: 2rem;
-  transition: all 0.2s;
+  box-shadow: -5px 8px 9px -6px black;
+  text-shadow: -1px 1px 6px black;
+
+  transition: all 0.3s;
 
   &:hover {
     background-color: var(--button-hover-color);
-    font-size: 1.5em;
+    font-size: 1.6em;
     letter-spacing: 2px;
+    text-shadow: -2px 2px 7px black;
   }
   @media screen and (max-width: 1100px) {
     font-size: 1.2rem;
