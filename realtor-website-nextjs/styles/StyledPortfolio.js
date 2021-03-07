@@ -138,6 +138,12 @@ export const StyledPortfolios = styled.div`
       text-align: center;
     }
   }
+  @media screen and (min-width: 1700px) {
+    .container {
+      flex: 0 0 24%;
+      max-width: 24%;
+    }
+  }
 `;
 
 export const SectionStyled = styled.div`

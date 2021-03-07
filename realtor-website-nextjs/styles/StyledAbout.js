@@ -80,7 +80,9 @@ export const StyledAboutPage = styled.div`
       text-align: center;
     }
   }
-  .card-container {
+
+  .card-container,
+  .risks-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 22rem);
     grid-auto-rows: 33rem;
@@ -89,13 +91,16 @@ export const StyledAboutPage = styled.div`
     margin: auto;
     width: 90%;
 
-    .card {
+    .card,
+    .risks-card {
       margin-bottom: 3rem;
       background-color: var(--background-color-dark);
       box-shadow: -5px 8px 9px -7px;
       height: 100%;
     }
-    .card-text {
+
+    .card-text,
+    .risks-card-text {
       height: 15rem;
       padding: 1rem;
     }
@@ -133,35 +138,25 @@ export const StyledAboutPage = styled.div`
   .risks-text {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     h1 {
       font-size: 2rem;
       text-align: center;
+      box-shadow: 0px 10px 5px -9px;
+      margin-bottom: 2rem;
     }
   }
   .risks-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 22rem);
     grid-auto-rows: 23rem;
-    grid-gap: 3rem;
-    justify-content: center;
-    margin: auto;
-    width: 90%;
+
     .risks-card {
-      margin-bottom: 3rem;
       background-color: rgba(255, 255, 255, 0.7);
-      box-shadow: -5px 8px 9px -7px;
-      height: 100%;
     }
     h2 {
       font-size: 1.1rem;
       text-align: center;
       font-weight: 600;
-    }
-    .risks-card-text {
-      height: 15rem;
-      padding: 1rem;
     }
     img {
       display: flex;
@@ -171,6 +166,78 @@ export const StyledAboutPage = styled.div`
       margin: auto;
     }
   }
+
+  ////// CONTACT ////////
+
+  .contact {
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+  .contact-container {
+    display: flex;
+
+    .img {
+      width: 50%;
+      display: flex;
+
+      img {
+        max-width: 100%;
+      }
+    }
+    .contact-form {
+      width: 50%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    form {
+      width: 70%;
+    }
+    input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: rgb(0, 0, 0);
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      outline: none;
+      background: transparent;
+    }
+    label {
+      color: black;
+      position: relative;
+      top: -6rem;
+      transition: all 0.5s ease;
+    }
+
+    input:focus ~ label,
+    input:valid {
+      font-size: 17px;
+      color: #034ff4;
+    }
+    a {
+      position: relative;
+      color: #000000;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: 0.5s;
+      letter-spacing: 2px;
+      &:hover {
+        color: #034ff4;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  ////// RESPONSİVE ////////
+
   @media screen and (max-width: 900px) {
     .photo {
       right: 4%;
@@ -184,6 +251,30 @@ export const StyledAboutPage = styled.div`
         width: 61%;
         top: 21%;
         left: 12%;
+      }
+    }
+
+    .contact-container {
+      flex-direction: column;
+      .img {
+        width: 100%;
+        height: 41rem;
+        img {
+          filter: brightness(0.8);
+        }
+      }
+      .contact-form {
+        position: absolute;
+        width: 100%;
+        height: 41rem;
+        padding: 0;
+      }
+      input {
+        border-bottom: 2px solid white;
+      }
+      label,
+      a {
+        color: white;
       }
     }
   }
@@ -212,7 +303,8 @@ export const StyledAboutPage = styled.div`
         left: 6%;
       }
     }
-    .services {
+    .services,
+    .risks {
       h1 {
         font-size: 1.5rem;
       }
@@ -225,15 +317,7 @@ export const StyledAboutPage = styled.div`
       grid-gap: 1.5rem;
       grid-auto-rows: 29rem;
     }
-    .risks {
-      h1 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-      }
-    }
+
     .risks-card-container {
       grid-gap: 1.5rem;
       grid-auto-rows: 21rem;
@@ -260,6 +344,19 @@ export const StyledAboutPage = styled.div`
   @media screen and (min-width: 1700px) {
     .background {
       height: 800px;
+    }
+    .description {
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    .gain-container {
+      p {
+        font-size: 1.3rem;
+      }
     }
     .services,
     .risks {

@@ -182,6 +182,45 @@ export default function About() {
             </div>
           </div>
         </div>
+        <div className="contact">
+          <h1>Bize Ulaşın</h1>
+
+          <div className="contact-container" id="contact">
+            <div className="img">
+              <img
+                src={
+                  "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                }
+                alt="contact image"
+              />
+            </div>
+            <div className="contact-form">
+              <form action="#" className="form">
+                <div className="input-box">
+                  <input type="text" name="" autoComplete="off" />
+                  <label>Name</label>
+                </div>
+                <div className="input-box">
+                  <input type="email" name="" autoComplete="off" />
+                  <label>Email</label>
+                </div>
+                <div className="input-box">
+                  <input type="tel" name="" autoComplete="off" />
+                  <label>Phone</label>
+                </div>
+                <div className="input-box">
+                  <input type="text" name="" autoComplete="off" />
+                  <label>Home Address</label>
+                </div>
+                <div className="input-box">
+                  <input type="text" name="" autoComplete="off" />
+                  <label>Message</label>
+                </div>
+                <a href="#">Submit</a>
+              </form>
+            </div>
+          </div>
+        </div>
       </StyledAboutPage>
     </Layout>
   );

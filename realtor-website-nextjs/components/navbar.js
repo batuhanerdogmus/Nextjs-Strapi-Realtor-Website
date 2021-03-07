@@ -131,7 +131,7 @@ const Navbar = () => {
         <Link href="/portfolios">
           <a>Portföyler</a>
         </Link>
-        <Link href="/contact">
+        <Link href="/about/#contact">
           <a>İletişim</a>
         </Link>
       </div>

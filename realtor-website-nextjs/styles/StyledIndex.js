@@ -251,12 +251,12 @@ export const PortfolioContainer = styled.div`
 
     h2 {
       text-align: start;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       margin: 0px 0 2px 10px;
     }
     h3 {
       text-align: start;
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin: 0px 0 0 10px;
     }
     h4,
