@@ -14,8 +14,21 @@ export const StyledSlider = styled.div`
     display: flex;
     background-color: rgb(0, 0, 0, 0.7);
     .slider {
-      height: 54vw;
-      width: 72vw;
+      width: 90%;
+      height: 90%;
+    }
+    .image {
+      object-fit: scale-down;
+    }
+    .icon {
+      display: none;
+    }
+    .x-icon {
+      display: inline;
+      width: 2.2rem;
+      z-index: 3;
+      margin: 0 0 auto auto;
+      filter: invert(1);
     }
   }
   .slider {
@@ -29,6 +42,11 @@ export const StyledSlider = styled.div`
     transition: 1s ease;
   }
   .slide {
+    display: flex;
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
     opacity: 0;
     transition: 1s ease;
   }
@@ -39,7 +57,14 @@ export const StyledSlider = styled.div`
     transform: translateX(-50%);
     width: 100%;
     height: 100%;
-    object-fit: contain;
+  }
+  .x-icon {
+    display: none;
+  }
+  .icon {
+    width: 2rem;
+    z-index: 3;
+    margin: auto 1rem 1rem auto;
   }
 
   .right-arrow {

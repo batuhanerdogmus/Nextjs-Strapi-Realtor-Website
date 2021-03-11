@@ -113,22 +113,20 @@ export default function About() {
               <div className="risks-card-text">
                 <h2>Gayrimenkul Expertiz</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Magnam illum suscipit reprehenderit voluptatem possimus culpa
-                  vel earum repudiandae corrupti, delectus inventore. Eligendi
-                  odio a voluptas velit fuga laborum asperiores nobis?
+                  Sizin için günümüzün güncel piyasa koşullarındaki en uygun
+                  fiyatı buluyoruz.
                 </p>
               </div>
             </div>
             <div className="risks-card">
               <img src={key} alt="office photo" />
               <div className="risks-card-text">
-                <h2>Gayrimenkul Expertiz</h2>
+                <h2>Güvenlik</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Magnam illum suscipit reprehenderit voluptatem possimus culpa
-                  vel earum repudiandae corrupti, delectus inventore. Eligendi
-                  odio a voluptas velit fuga laborum asperiores nobis?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Quasi magnam quos iure, id amet possimus obcaecati saepe
+                  labore ut velit minima similique, soluta inventore ullam atque
+                  eius, cupiditate enim molestiae!
                 </p>
               </div>
             </div>
@@ -147,36 +145,31 @@ export default function About() {
             <div className="risks-card">
               <img src={security} alt="office photo" />
               <div className="risks-card-text">
-                <h2>Gayrimenkul Expertiz</h2>
+                <h2>Güvenlik</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Magnam illum suscipit reprehenderit voluptatem possimus culpa
-                  vel earum repudiandae corrupti, delectus inventore. Eligendi
-                  odio a voluptas velit fuga laborum asperiores nobis?
+                  Evinizin kapısını kime açıyor olabileceğinizi hiç düşündünüz
+                  mü? Sizin ve ailenizin güvenliği için evinize gelen herkesin
+                  kayıdını tutuyoruz.
                 </p>
               </div>
             </div>
             <div className="risks-card">
               <img src={share} alt="office photo" />
               <div className="risks-card-text">
-                <h2>Gayrimenkul Expertiz</h2>
+                <h2>Pazarlama Planı</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Magnam illum suscipit reprehenderit voluptatem possimus culpa
-                  vel earum repudiandae corrupti, delectus inventore. Eligendi
-                  odio a voluptas velit fuga laborum asperiores nobis?
+                  Gerçek alıcılara ulaşmak için özel pazarlama planı
+                  oluşturuyoruz.
                 </p>
               </div>
             </div>
             <div className="risks-card">
               <img src={todo} alt="office photo" />
               <div className="risks-card-text">
-                <h2>Gayrimenkul Expertiz</h2>
+                <h2>Brokratik İşlemler</h2>
                 <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Magnam illum suscipit reprehenderit voluptatem possimus culpa
-                  vel earum repudiandae corrupti, delectus inventore. Eligendi
-                  odio a voluptas velit fuga laborum asperiores nobis?
+                  Satış sırasında ve sonrasındaki tüm bürokratik işlemleri sizin
+                  için eksiksiz bir şekilde yürütüyoruz.
                 </p>
               </div>
             </div>

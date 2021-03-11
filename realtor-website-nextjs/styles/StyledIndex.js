@@ -9,17 +9,27 @@ export const HeaderContainer = styled.div`
     height: 80vh;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    overflow: hidden;
     color: var(--text-color-light);
     margin-bottom: 1.7rem;
 
-    p {
-      font-size: 1.5rem;
-      width: 100%;
-      margin: 1.5rem;
-      text-align: center;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 8px;
+      color: red;
+      margin: 0;
+      line-height: 1.2;
+      z-index: 1;
+      text-shadow: -1px 1px 3px white;
+    }
+    h2 {
+      font-size: 3rem;
+      margin: 0;
+      line-height: 0;
+      text-shadow: -1px 1px 3px black;
     }
   }
   .section-container {
@@ -43,7 +53,7 @@ export const HeaderContainer = styled.div`
     img {
       width: 100%;
       height: 100%;
-      background-color: #424242;
+      background-color: #0c214a;
     }
   }
   .section-text {
@@ -64,6 +74,7 @@ export const HeaderContainer = styled.div`
     }
     p {
       max-width: 85%;
+      line-height: 1.6;
     }
 
     button {
@@ -147,7 +158,7 @@ export const PortfolioText = styled.h1`
 
 export const PortfolioContainer = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 32rem;
   display: flex;
   position: relative;
   overflow-y: hidden;
@@ -223,12 +234,13 @@ export const PortfolioContainer = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    top: 85%;
+    top: 82%;
     opacity: 0;
     font-size: 1.8rem;
     font-weight: bold;
     text-transform: none;
     letter-spacing: 2px;
+    transition: opacity 1.5s ease-in-out;
   }
   @media screen and (max-width: 1400px) {
     .content {
@@ -334,30 +346,21 @@ export const SellContainer = styled.div`
     font-size: 1.2rem;
   }
 
-  form {
-    input {
-      width: 30%;
-      padding: 2px;
-    }
-    button {
-      font-size: 1.2rem;
-      padding: 2px 22px;
-      margin-left: 1rem;
-      color: var(--button-color);
-      background-color: var(--button-background-color);
-      border: 0;
-      transition: all 0.2s;
-      &:hover {
-        background-color: var(--button-hover-color);
-        font-size: 1.3rem;
-        letter-spacing: 2px;
-      }
+  button {
+    font-size: 1.2rem;
+    padding: 2px 22px;
+    margin-left: 1rem;
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    border: 0;
+    transition: all 0.2s;
+    &:hover {
+      background-color: var(--button-hover-color);
+      font-size: 1.3rem;
+      letter-spacing: 2px;
     }
   }
   @media screen and (max-width: 800px) {
-    form input {
-      width: 50%;
-    }
     h1 {
       font-size: 1.8rem;
     }
@@ -374,23 +377,12 @@ export const SellContainer = styled.div`
     h3 {
       font-size: 0.9rem;
     }
-    form {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 7rem;
-      justify-content: space-around;
-      input {
-        width: 90%;
-        padding: 2px;
-      }
-      button {
-        margin-left: 0;
-        width: 8rem;
-        font-size: 1rem;
-        padding: 3px;
-      }
+
+    button {
+      margin-left: 0;
+      width: 8rem;
+      font-size: 1rem;
+      padding: 3px;
     }
   }
 `;

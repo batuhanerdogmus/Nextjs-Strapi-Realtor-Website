@@ -7,12 +7,8 @@ export default function Header({ user }) {
       {user.assets.map((asset) => (
         <HeaderContainer key={asset.id}>
           <div className="header">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              omnis pariatur quas natus placeat, voluptatem totam incidunt id
-              dolorum adipisci earum. Maxime voluptatem soluta atque, voluptates
-              excepturi dolor velit ipsa?
-            </p>
+            <h1>HAYALLERİNİ</h1>
+            <h2>ERTELEME</h2>
           </div>
           <div className="selection">
             <div className="section-container">

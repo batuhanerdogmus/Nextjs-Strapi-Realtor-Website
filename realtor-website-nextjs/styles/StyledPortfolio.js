@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 export const StyledPortfolios = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 1rem;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  grid-auto-rows: 32rem;
 
   .container {
-    flex: 0 0 32%;
-    max-width: 32%;
-    height: 60vh;
     margin-top: 3rem;
   }
 
@@ -53,7 +50,7 @@ export const StyledPortfolios = styled.div`
   .content {
     position: absolute;
     z-index: 10;
-    top: 7%;
+    top: 5%;
     pointer-events: none;
     transition: all 1.5s ease;
     opacity: 0;
@@ -78,7 +75,7 @@ export const StyledPortfolios = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    top: 85%;
+    top: 81%;
     opacity: 0;
     font-size: 1.8rem;
     font-weight: bold;
@@ -87,12 +84,10 @@ export const StyledPortfolios = styled.div`
   }
 
   @media screen and (max-width: 1100px) {
-    .container {
-      flex: 0 0 49%;
-      max-width: 49%;
-    }
+    grid-template-columns: repeat(2, 1fr);
+
     .content {
-      top: 86%;
+      top: 84%;
       opacity: 1;
     }
     .card-container {
@@ -130,19 +125,15 @@ export const StyledPortfolios = styled.div`
   }
 
   @media screen and (max-width: 600px) {
-    .container {
-      flex: 0 0 99%;
-      max-width: 99%;
-    }
+    grid-template-columns: repeat(1, 1fr);
+
     .card-container > .content * {
       text-align: center;
     }
   }
   @media screen and (min-width: 1700px) {
-    .container {
-      flex: 0 0 24%;
-      max-width: 24%;
-    }
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 32rem;
   }
 `;
 
@@ -263,7 +254,9 @@ export const SectionStyled = styled.div`
 export const StyledPortfolio = styled.div`
   .title {
     margin-top: 4rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: black;
+    font-weight: 600;
     text-align: center;
   }
   .container {
@@ -338,6 +331,9 @@ export const StyledPortfolio = styled.div`
       font-size: revert;
       font-weight: revert;
       text-align: center;
+    }
+    p {
+      font-size: 1.2rem;
     }
   }
   .contact-container {
@@ -430,7 +426,10 @@ export const StyledPortfolio = styled.div`
   @media screen and (min-width: 600px) {
     .title {
       margin-top: 6rem;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      color: black;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
     .container {
       flex-direction: row;

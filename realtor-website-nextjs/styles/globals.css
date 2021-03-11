@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 :root {
-  --text-color: #012331;
+  --text-color: #3b3b3b;
   --text-color-secondary: #124a63;
-  --text-color-light: #eeeeee;
+  --text-color-light: #dbdbdb;
 
   --primary-color: #3ed6d6;
   --background-color: #f9f9f9;
@@ -11,8 +11,8 @@
   --background-color-secondary: #00000085;
   --background-color-light: #eef3f6;
   --button-color: #edf0f1;
-  --button-background-color: #0088a9;
-  --button-hover-color: #2d698b;
+  --button-background-color: #0c214a;
+  --button-hover-color: #1c3974;
 
   --font-family: "Poppins", "sans-serif";
   --box-shadow: 8px 2px 8px rgba(0, 0, 0, 0.05);

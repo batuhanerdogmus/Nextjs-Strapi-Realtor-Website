@@ -53,7 +53,7 @@ export default function Home({ users }) {
                   </Link>
                 ))}
             </PortfolioContainer>
-            <Link href="/portfolio">
+            <Link href="/portfolios">
               <StyledButton>Portföyler</StyledButton>
             </Link>
             <SellContainer>
@@ -62,10 +62,10 @@ export default function Home({ users }) {
                 Bügünkü piyasa şartlarında mülkünüzün değerini öğrenmek için
                 hemen iletişime geçin...
               </h3>
-              <form action="#">
-                <input type="email" placeholder="Email Adresiniz" />
-                <button>Gönder</button>
-              </form>
+
+              <Link href="/about/#contact">
+                <button>İletişim</button>
+              </Link>
             </SellContainer>
             <PortfolioText>Sattığım Portföyler</PortfolioText>
             <PortfolioContainer>

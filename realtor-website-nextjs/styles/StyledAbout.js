@@ -31,7 +31,7 @@ export const StyledAboutPage = styled.div`
     margin-top: 5rem;
     padding: 5rem;
     background-color: var(--background-color-dark);
-    height: 65vh;
+    height: 40rem;
     align-items: center;
   }
   .description {
@@ -40,7 +40,7 @@ export const StyledAboutPage = styled.div`
 
     h1 {
       position: absolute;
-      top: 10%;
+      top: 5rem;
       left: 50%;
       transform: translateX(-50%);
       font-size: 2rem;
@@ -53,13 +53,16 @@ export const StyledAboutPage = styled.div`
       text-align: start;
       position: absolute;
       width: 50%;
-      top: 21%;
+      top: 10rem;
       left: 10%;
+      line-height: 1.9;
+      color: var(--text-color-light);
     }
   }
   .photo {
     right: 8%;
     position: absolute;
+    top: 12rem;
 
     img {
       max-width: 16rem;
@@ -84,8 +87,8 @@ export const StyledAboutPage = styled.div`
   .card-container,
   .risks-card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 22rem);
-    grid-auto-rows: 33rem;
+    grid-template-columns: repeat(auto-fit, 24rem);
+    grid-auto-rows: 34rem;
     grid-gap: 3rem;
     justify-content: center;
     margin: auto;
@@ -103,6 +106,16 @@ export const StyledAboutPage = styled.div`
     .risks-card-text {
       height: 15rem;
       padding: 1rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      text-align: center;
+      font-weight: 600;
+      color: black;
+    }
+    p {
+      color: var(--text-color);
+      line-height: 1.9;
     }
     img {
       display: flex;
@@ -153,11 +166,7 @@ export const StyledAboutPage = styled.div`
     .risks-card {
       background-color: rgba(255, 255, 255, 0.7);
     }
-    h2 {
-      font-size: 1.1rem;
-      text-align: center;
-      font-weight: 600;
-    }
+
     img {
       display: flex;
       width: 6rem;
@@ -241,7 +250,6 @@ export const StyledAboutPage = styled.div`
   @media screen and (max-width: 900px) {
     .photo {
       right: 4%;
-      top: 20%;
       img {
         max-width: 13rem;
       }
@@ -249,7 +257,6 @@ export const StyledAboutPage = styled.div`
     .description {
       p {
         width: 61%;
-        top: 21%;
         left: 12%;
       }
     }
@@ -288,7 +295,6 @@ export const StyledAboutPage = styled.div`
     }
     .photo {
       right: 1%;
-      top: 27%;
       img {
         max-width: 11rem;
       }
@@ -296,11 +302,12 @@ export const StyledAboutPage = styled.div`
     .description {
       h1 {
         font-size: 1.5rem;
+        top: 4rem;
       }
       p {
         width: 61%;
-        top: 23%;
         left: 6%;
+        top: 8rem;
       }
     }
     .services,
@@ -335,7 +342,7 @@ export const StyledAboutPage = styled.div`
     }
     .photo {
       right: 1%;
-      top: 35%;
+      top: 15rem;
       img {
         max-width: 10rem;
       }
@@ -351,6 +358,9 @@ export const StyledAboutPage = styled.div`
       }
       p {
         font-size: 1.3rem;
+        width: 30%;
+        top: 15rem;
+        left: 13%;
       }
     }
     .gain-container {

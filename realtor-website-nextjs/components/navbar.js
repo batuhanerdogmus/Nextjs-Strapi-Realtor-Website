@@ -5,7 +5,7 @@ import Bars from "../img/bars.png";
 const Nav = styled.nav`
   height: 5rem;
   width: 100%;
-  color: var(--text-color);
+  color: black;
   background-color: var(--background-color-dark);
   display: flex;
   justify-content: space-between;
@@ -14,9 +14,11 @@ const Nav = styled.nav`
   z-index: 100;
   top: 0;
   opacity: 0.9;
+  padding: 0 1rem;
   .logo {
     a {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      font-weight: 600;
       margin-right: 0;
     }
   }
@@ -41,7 +43,7 @@ const Nav = styled.nav`
   }
   @media screen and (max-width: 600px) {
     height: 3rem;
-
+    padding: 0;
     .navLinks {
       opacity: 0;
       transform: translateY(100%);

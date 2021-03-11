@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { StyledSlider } from "../styles/StyledImageSlider";
+import expand from "../img/expand.svg";
+import xIcon from "../img/x-icon.svg";
 
 const ImageSlider = ({ portfolio, pressedKeys }) => {
   const [current, setCurrent] = useState(0);
@@ -41,10 +43,7 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
 
   return (
     <StyledSlider>
-      <div
-        className={fullSize ? "full-size-slider" : ""}
-        onClick={fullSizeHandler}
-      >
+      <div className={fullSize ? "full-size-slider" : ""}>
         <div className="slider">
           <div className="left-arrow" onClick={prevSlide}>
             <svg width="20" height="20" viewBox="0 0 24 24">
@@ -65,10 +64,22 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
               >
                 <img
                   {...handlers}
-                  src={"http://localhost:1337" + slide.formats.small.url}
+                  src={"http://localhost:1337" + slide.formats.large.url}
                   alt="image"
                   className="image"
                   draggable="false"
+                />
+                <img
+                  className="icon"
+                  src={expand}
+                  alt="full size icon"
+                  onClick={fullSizeHandler}
+                />
+                <img
+                  src={xIcon}
+                  alt="escape"
+                  className="x-icon"
+                  onClick={fullSizeHandler}
                 />
               </div>
             );

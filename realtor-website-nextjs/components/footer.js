@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import facebook from "../img/facebook.svg";
+import instagram from "../img/instagram.svg";
+import linkedin from "../img/linkedin.svg";
+import Link from "next/link";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -10,39 +14,103 @@ const StyledFooter = styled.div`
   text-align: center;
   align-items: center;
   margin-top: 1rem;
-  li {
-    list-style: none;
-    display: inline-block;
+  flex-direction: column;
+
+  .address-container {
+    width: 100%;
+    margin-bottom: 1.5rem;
+
+    address {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+  .social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    flex-wrap: wrap;
+
+    .social {
+      display: flex;
+      & > * {
+        margin: auto 10px;
+      }
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-style: italic;
+    }
+    a {
+      width: 2.5rem;
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .address-container {
+      margin-bottom: 0.5rem;
+      address {
+        flex-direction: column;
+      }
+    }
+    .social-container {
+      flex-direction: column;
+      margin: 0;
+      .social {
+        margin: auto;
+      }
+    }
   }
 `;
 const Footer = () => {
   return (
     <>
       <StyledFooter>
-        <div>
-          <ul>
-            <li>
-              <p>facebook</p>
-            </li>
-            <li>
-              <p>facebook</p>
-            </li>
-            <li>
-              <p>facebook</p>
-            </li>
-            <p>Sosyal Medya İle Takipte Kalın</p>
-          </ul>
+        <div className="social-container">
+          <p>Sosyal Medya İle</p>
+          <div className="social">
+            <a
+              target="_blank"
+              href={"https://www.facebook.com/meralegemen2004"}
+            >
+              <img src={facebook} alt="facebook icon" />
+            </a>
+            <a
+              target="_blank"
+              href={"https://www.instagram.com/meralegemenrw/"}
+            >
+              <img src={instagram} alt="instagram icon" />
+            </a>
+            <a
+              target="_blank"
+              href={"https://www.linkedin.com/in/meralegemenrw/"}
+            >
+              <img src={linkedin} alt="linkedin icon" />
+            </a>
+          </div>
+          <p>Takipte Kalın</p>
         </div>
-        <div>
+        <div className="address-container">
           <address>
+            <p>RealtyWorld Yıldız Gayrimenkul</p>
             <p>
               tel: +90 537 245 5007 <br />
               uncalı caddesi <br />
               no:ı6
             </p>
-            <p>RealtyWorld Yıldız Gayrimenkul</p>
-            Antalya/Konyaaltı
-          </address>{" "}
+            <p>Konyaaltı/Antalya</p>
+          </address>
         </div>
       </StyledFooter>
       <footer style={{ textAlign: "center" }}>
