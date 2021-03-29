@@ -8,6 +8,7 @@ import {
   StyledButton,
 } from "../styles/StyledIndex";
 import Header from "../components/header";
+import API from "../components/constant";
 
 export default function Home({ users }) {
   const currencyFormat = (num) => {
@@ -103,7 +104,7 @@ export default function Home({ users }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:1337/users`);
+  const res = await fetch(`${API}/users`);
   const users = await res.json();
   return {
     props: { users },

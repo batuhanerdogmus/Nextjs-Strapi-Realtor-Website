@@ -4,6 +4,8 @@ import { StyledPortfolio } from "../../styles/StyledPortfolio";
 import ReactMarkdown from "react-markdown";
 import KeyboardEvent from "../../components/useKeyboardEvent";
 import { Description } from "../../components/description";
+import slug from "slug";
+import API from "../../components/constant";
 
 const PortfolioDetail = ({ portfolio }) => {
   const currencyFormat = (num) => {
@@ -109,11 +111,23 @@ const PortfolioDetail = ({ portfolio }) => {
     </Layout>
   );
 };
+export async function getStaticPaths() {
+  const res = await fetch(`${API}/portfolios`);
+  const portfolios = await res.json();
+  const paths = portfolios.map((portfolio) => {
+    return { params: { slug: `${slug(portfolio.title)}-${portfolio.id}` } };
+  });
+  console.log(paths);
+  return {
+    paths,
+    fallback: false,
+  };
+}
 
-export async function getServerSideProps({ params }) {
-  const res = await fetch(`http://localhost:1337/portfolios/` + params.id);
+export async function getStaticProps({ params }) {
+  const id = params.slug.split("-").slice(-1)[0];
+  const res = await fetch(`${API}/portfolios/` + id);
   const portfolio = await res.json();
-
   return {
     props: { portfolio },
   };

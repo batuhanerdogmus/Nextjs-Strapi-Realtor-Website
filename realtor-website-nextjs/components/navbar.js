@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Bars from "../img/bars.png";
 const Nav = styled.nav`
@@ -89,28 +89,7 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
-  const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      localStorage.getItem("theme")
-    );
-    setTheme(localStorage.getItem("theme"));
-    setTheme(localStorage.setItem("theme", "light"));
-  }, []);
-  const switchTheme = () => {
-    if (theme === "light") {
-      saveTheme("dark");
-    } else {
-      saveTheme("light");
-    }
-  };
-  const saveTheme = (theme) => {
-    setTheme(theme);
-    localStorage.setItem("theme", theme);
-    document.documentElement.setAttribute("data-theme", theme);
-  };
   return (
     <Nav>
       <div className="logo">
@@ -122,13 +101,13 @@ const Navbar = () => {
         <img src={Bars} alt="" />
       </div>
       <div className={`navLinks ${showNavbar ? "navActive" : ""}`}>
-        <button className="theme" onClick={switchTheme}></button>
-
         <Link href="/">
           <a>Anasayfa</a>
         </Link>
         <Link href="/about">
-          <a>Hakkımda</a>
+          <a onClick={() => window.scrollTo({ top: "0", behavior: "smooth" })}>
+            Hakkımda
+          </a>
         </Link>
         <Link href="/portfolios">
           <a>Portföyler</a>

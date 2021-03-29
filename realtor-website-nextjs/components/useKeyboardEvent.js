@@ -33,13 +33,3 @@ const useKeyboardEvent = ({ portfolio }) => {
 };
 
 export default useKeyboardEvent;
-
-/* {console.log(pressedKeys)}
-      <h3>KeyDown Functional Component</h3>
-      <h4>Pressed Keys:</h4>
-
-      {pressedKeys.map((e) => (
-        <span key={e} className="key">
-          {e}
-        </span>
-      ))} */

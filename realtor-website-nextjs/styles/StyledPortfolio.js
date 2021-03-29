@@ -58,6 +58,7 @@ export const StyledPortfolios = styled.div`
     height: fit-content;
     display: flex;
     flex-direction: column;
+    text-transform: capitalize;
   }
   h2,
   h1,
@@ -264,6 +265,7 @@ export const StyledPortfolio = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+
     .card {
       text-align: center;
       align-items: center;

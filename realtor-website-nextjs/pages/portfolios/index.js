@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import API from "../../components/constant";
 import Layout from "../../components/layout";
 import Portfolios from "../../components/portfolios";
 
@@ -25,7 +26,7 @@ const Portfolio = ({ portfolios }) => {
 };
 
 export async function getStaticProps() {
-  const res = await fetch(`http://localhost:1337/portfolios`);
+  const res = await fetch(`${API}/portfolios`);
   const portfolios = await res.json();
   return {
     props: { portfolios },

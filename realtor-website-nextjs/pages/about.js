@@ -16,7 +16,7 @@ export default function About() {
         <title>Hakkımda</title>
       </Head>
       <StyledAboutPage>
-        <div className="background"></div>
+        <div className="background" id="about"></div>
         <div className="container">
           <div className="description">
             <h1>Neden Meral Egemen?</h1>
@@ -166,7 +166,7 @@ export default function About() {
             <div className="risks-card">
               <img src={todo} alt="office photo" />
               <div className="risks-card-text">
-                <h2>Brokratik İşlemler</h2>
+                <h2>Bürokratik İşlemler</h2>
                 <p>
                   Satış sırasında ve sonrasındaki tüm bürokratik işlemleri sizin
                   için eksiksiz bir şekilde yürütüyoruz.

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import facebook from "../img/facebook.svg";
 import instagram from "../img/instagram.svg";
 import linkedin from "../img/linkedin.svg";
-import Link from "next/link";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -114,7 +113,7 @@ const Footer = () => {
         </div>
       </StyledFooter>
       <footer style={{ textAlign: "center" }}>
-        designed by @batuhanErdogmus
+        Copyright ©2021 Created by Batuhan Erdogmus
       </footer>
     </>
   );

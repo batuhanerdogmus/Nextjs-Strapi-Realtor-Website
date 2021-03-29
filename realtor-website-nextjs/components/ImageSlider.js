@@ -3,6 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import { StyledSlider } from "../styles/StyledImageSlider";
 import expand from "../img/expand.svg";
 import xIcon from "../img/x-icon.svg";
+import API from "./constant";
 
 const ImageSlider = ({ portfolio, pressedKeys }) => {
   const [current, setCurrent] = useState(0);
@@ -64,7 +65,7 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
               >
                 <img
                   {...handlers}
-                  src={"http://localhost:1337" + slide.formats.large.url}
+                  src={`${API}` + slide.formats.large.url}
                   alt="image"
                   className="image"
                   draggable="false"

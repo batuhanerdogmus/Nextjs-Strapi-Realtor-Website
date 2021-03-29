@@ -63,6 +63,7 @@ export const StyledAboutPage = styled.div`
     right: 8%;
     position: absolute;
     top: 12rem;
+    box-shadow: -2px 1px 8px -3px black;
 
     img {
       max-width: 16rem;
@@ -322,7 +323,7 @@ export const StyledAboutPage = styled.div`
     }
     .card-container {
       grid-gap: 1.5rem;
-      grid-auto-rows: 29rem;
+      grid-auto-rows: 31rem;
     }
 
     .risks-card-container {
@@ -334,6 +335,7 @@ export const StyledAboutPage = styled.div`
   @media screen and (max-width: 400px) {
     .card-container {
       grid-template-columns: auto;
+      grid-auto-rows: 33rem;
     }
     .risks-card-container {
       grid-template-columns: auto;

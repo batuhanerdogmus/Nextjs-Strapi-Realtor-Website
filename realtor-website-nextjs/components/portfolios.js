@@ -1,6 +1,8 @@
 import { StyledPortfolios, SectionStyled } from "../styles/StyledPortfolio";
 import { useState } from "react";
 import Link from "next/link";
+import slug from "slug";
+import API from "./constant";
 
 const orderByPrice = (portfolio, direction) => {
   if (direction === "asc") {
@@ -165,17 +167,17 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
       </SectionStyled>
       <StyledPortfolios>
         {filteredByRoom.map((portfolio) => (
-          <Link href={`/portfolios/${portfolio.id}`} key={portfolio.id}>
+          <Link
+            href={`/portfolios/${slug(portfolio.title)}-${portfolio.id}`}
+            key={portfolio.id}
+          >
             <div
               className="container"
               style={{ display: portfolio.onsale ? "flex" : "none" }}
             >
               <div className="card-container">
                 <img
-                  src={
-                    "http://localhost:1337" +
-                    portfolio.photos[0].formats.small.url
-                  }
+                  src={`${API}` + portfolio.photos[0].formats.small.url}
                   alt={portfolio.title}
                 />
                 <span></span>

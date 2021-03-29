@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
     margin-bottom: 1.7rem;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 5.5rem;
       font-weight: 600;
       letter-spacing: 8px;
       color: red;
@@ -26,7 +26,7 @@ export const HeaderContainer = styled.div`
       text-shadow: -1px 1px 3px white;
     }
     h2 {
-      font-size: 3rem;
+      font-size: 6rem;
       margin: 0;
       line-height: 0;
       text-shadow: -1px 1px 3px black;
@@ -53,7 +53,7 @@ export const HeaderContainer = styled.div`
     img {
       width: 100%;
       height: 100%;
-      background-color: #0c214a;
+      background-color: #2451a7;
     }
   }
   .section-text {
@@ -217,6 +217,7 @@ export const PortfolioContainer = styled.div`
     height: fit-content;
     display: flex;
     flex-direction: column;
+    text-transform: capitalize;
   }
   h2,
   h1,
