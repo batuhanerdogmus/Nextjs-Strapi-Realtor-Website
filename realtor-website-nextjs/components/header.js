@@ -1,5 +1,6 @@
 import picture from "../img/Picture1.jpg";
 import { HeaderContainer } from "../styles/StyledIndex";
+import API from "./constant";
 
 export default function Header({ user }) {
   return (
@@ -18,7 +19,7 @@ export default function Header({ user }) {
                     <img
                       style={{ objectFit: "contain" }}
                       key={img.id}
-                      src={"http://localhost:1337" + img.formats.small.url}
+                      src={API + img.formats.small.url}
                       alt=""
                     />
                   ))}

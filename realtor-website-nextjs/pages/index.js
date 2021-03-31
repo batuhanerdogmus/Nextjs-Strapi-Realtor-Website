@@ -9,6 +9,7 @@ import {
 } from "../styles/StyledIndex";
 import Header from "../components/header";
 import API from "../components/constant";
+import slug from "slug";
 
 export default function Home({ users }) {
   const currencyFormat = (num) => {
@@ -29,17 +30,19 @@ export default function Home({ users }) {
               {user.portfolios
                 .sort((a, b) => b.id - a.id)
                 .map((portfolio) => (
-                  <Link href={`/portfolios/${portfolio.id}`} key={portfolio.id}>
+                  <Link
+                    href={`/portfolios/${slug(portfolio.title)}-${
+                      portfolio.id
+                    }`}
+                    key={portfolio.id}
+                  >
                     <div
                       className="portfolio-card"
                       key={portfolio.id}
                       style={{ display: portfolio.onsale ? "flex" : "none" }}
                     >
                       <img
-                        src={
-                          "http://localhost:1337" +
-                          portfolio.photos[0].formats.medium.url
-                        }
+                        src={API + portfolio.photos[0].formats.medium.url}
                         alt={portfolio.title}
                       />
                       <span></span>
@@ -79,10 +82,7 @@ export default function Home({ users }) {
                     style={{ display: !portfolio.onsale ? "flex" : "none" }}
                   >
                     <img
-                      src={
-                        "http://localhost:1337" +
-                        portfolio.photos[0].formats.medium.url
-                      }
+                      src={API + portfolio.photos[0].formats.medium.url}
                       alt={portfolio.title}
                     />
                     <span></span>

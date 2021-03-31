@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import gardenImg from "../img/IMG_2776.jpg";
 
 export const HeaderContainer = styled.div`
   .header {
-    background-image: url(${gardenImg});
     background-size: cover;
     background-position: center;
     height: 80vh;
@@ -162,12 +160,12 @@ export const PortfolioContainer = styled.div`
   display: flex;
   position: relative;
   overflow-y: hidden;
-  justify-content: space-between;
   &::-webkit-scrollbar {
     display: none;
   }
   .portfolio-card {
     min-width: 24.8vw;
+    max-width: 33vw;
     height: 95%;
     overflow: hidden;
     position: relative;
