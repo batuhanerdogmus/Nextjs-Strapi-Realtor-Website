@@ -71,7 +71,7 @@ export default function Home({ users }) {
                 <button>İletişim</button>
               </Link>
             </SellContainer>
-            <PortfolioText>Sattığım Portföyler</PortfolioText>
+            <PortfolioText>Yaptığım İşlemler</PortfolioText>
             <PortfolioContainer>
               {user.portfolios
                 .sort((a, b) => b.id - a.id)

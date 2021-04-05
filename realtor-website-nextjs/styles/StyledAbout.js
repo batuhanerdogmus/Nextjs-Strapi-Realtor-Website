@@ -225,6 +225,9 @@ export const StyledAboutPage = styled.div`
       position: relative;
       top: -6rem;
       transition: all 0.5s ease;
+      sup {
+        font-size: 0.6rem;
+      }
     }
 
     input:focus ~ label,

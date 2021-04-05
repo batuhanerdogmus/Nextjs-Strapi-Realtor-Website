@@ -1,3 +1,3 @@
-const API = "https://frozen-hamlet-14440.herokuapp.com";
+const API = "http://localhost:1337";
 
 export default API;

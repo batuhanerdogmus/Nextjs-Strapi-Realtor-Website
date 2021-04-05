@@ -119,6 +119,15 @@ export const HeaderContainer = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
+    .header {
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 3px;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
     .section-container:last-child {
       .section1 {
         flex-direction: column-reverse;

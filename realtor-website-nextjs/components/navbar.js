@@ -46,6 +46,7 @@ const Nav = styled.nav`
     padding: 0;
     .navLinks {
       opacity: 0;
+      pointer-events: none;
       transform: translateY(100%);
       position: absolute;
       justify-content: center;
@@ -72,15 +73,16 @@ const Nav = styled.nav`
     .navBarIcon {
       display: flex;
       justify-content: flex-end;
-      width: 100%;
       z-index: 11;
-
+      margin-left: auto;
+      cursor: pointer;
       img {
         margin: 0 1rem;
       }
     }
     .navActive {
       opacity: 1;
+      pointer-events: auto;
       transform: translateY(140%);
       background-color: var(--background-color-dark);
     }

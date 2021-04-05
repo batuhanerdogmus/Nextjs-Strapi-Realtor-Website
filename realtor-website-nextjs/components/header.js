@@ -1,3 +1,4 @@
+import Link from "next/link";
 import picture from "../img/Picture1.jpg";
 import { HeaderContainer } from "../styles/StyledIndex";
 import API from "./constant";
@@ -7,7 +8,16 @@ export default function Header({ user }) {
     <div>
       {user.assets.map((asset) => (
         <HeaderContainer key={asset.id}>
-          <div className="header">
+          <div
+            className="header"
+            style={{
+              backgroundImage: `url(${
+                API + asset.homeImg[0].formats.large.url
+              })`,
+            }}
+          >
+            {console.log(asset.homeImg[0].formats.large)}
+
             <h1>HAYALLERİNİ</h1>
             <h2>ERTELEME</h2>
           </div>
@@ -27,7 +37,9 @@ export default function Header({ user }) {
                 <div className="section-text">
                   <h2>{asset.home}</h2>
                   <p>{asset.aboutdescription}</p>
-                  <button>İletişim</button>
+                  <Link href="/about/#contact">
+                    <button>İletişim</button>
+                  </Link>
                 </div>
               </div>
             </div>

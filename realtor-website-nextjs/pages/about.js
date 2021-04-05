@@ -8,8 +8,48 @@ import security from "../img/security.svg";
 import share from "../img/share.svg";
 import todo from "../img/todo.svg";
 import { StyledAboutPage } from "../styles/StyledAbout";
+import { useState } from "react";
+import API from "../components/constant";
 
 export default function About() {
+  const [name, setName] = useState("");
+  const [mail, setMail] = useState("");
+  const [tel, setTel] = useState("");
+  const [address, setAddress] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function addMessage() {
+    const messageInfos = {
+      name: name,
+      mail: mail,
+      no: tel,
+      address: address,
+      message: message,
+    };
+
+    const add = await fetch(`${API}/submits`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(messageInfos),
+    });
+
+    console.log(messageInfos);
+    const addResponse = await add;
+
+    if (addResponse.ok) {
+      setName(""), setTel(""), setMessage(""), setAddress("");
+      alert(
+        "Mesajınız başarı ile iletilmiştir, en yakın zamanda size geri dönüş sağlayacağız."
+      );
+    } else {
+      alert("Bir hata oluştu, lütfen formu kontrol ediniz.");
+    }
+
+    console.log(addResponse.status);
+  }
   return (
     <Layout>
       <Head>
@@ -19,12 +59,11 @@ export default function About() {
         <div className="background" id="about"></div>
         <div className="container">
           <div className="description">
-            <h1>Neden Meral Egemen?</h1>
+            <h1>Meral EGEMEN Kimdir?</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur similique modi ipsam, maxime et corrupti quibusdam
-              atque iusto possimus, sunt ab magni. Atque tempora nam facilis
-              mollitia esse numquam suscipit!
+              Meral EGEMEN 2005 yılından bu yana inşaat ve gayrimenkul
+              sektöründe çalışmakta olup, 2020 den itibaren kariyerine Realty
+              World Yıldız Gayrimenkul'de devam etmektedir.
             </p>
           </div>
           <div className="photo">
@@ -190,26 +229,55 @@ export default function About() {
             <div className="contact-form">
               <form action="#" className="form">
                 <div className="input-box">
-                  <input type="text" name="" autoComplete="off" />
-                  <label>Name</label>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                  />
+                  <label>İsminiz</label>
                 </div>
                 <div className="input-box">
-                  <input type="email" name="" autoComplete="off" />
-                  <label>Email</label>
+                  <input
+                    type="email"
+                    autoComplete="off"
+                    onChange={(e) => setMail(e.target.value)}
+                    value={mail}
+                  />
+                  <label>Mail Adresiniz</label>
                 </div>
                 <div className="input-box">
-                  <input type="tel" name="" autoComplete="off" />
-                  <label>Phone</label>
+                  <input
+                    type="tel"
+                    autoComplete="off"
+                    onChange={(e) => setTel(e.target.value)}
+                    value={tel}
+                  />
+                  <label>Telefon no</label>
                 </div>
                 <div className="input-box">
-                  <input type="text" name="" autoComplete="off" />
-                  <label>Home Address</label>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    onChange={(e) => setAddress(e.target.value)}
+                    value={address}
+                  />
+                  <label>
+                    Ev Adresi <sup>(opsiyonel)</sup>
+                  </label>
                 </div>
                 <div className="input-box">
-                  <input type="text" name="" autoComplete="off" />
-                  <label>Message</label>
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                  />
+                  <label>
+                    Mesajınız<sup>(opsiyonel)</sup>
+                  </label>
                 </div>
-                <a href="#">Submit</a>
+                <a onClick={() => addMessage()}>Gönder</a>
               </form>
             </div>
           </div>

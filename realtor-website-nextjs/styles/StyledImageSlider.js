@@ -17,9 +17,7 @@ export const StyledSlider = styled.div`
       width: 90%;
       height: 90%;
     }
-    .image {
-      object-fit: scale-down;
-    }
+
     .icon {
       display: none;
     }
