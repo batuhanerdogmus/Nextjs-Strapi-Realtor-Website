@@ -11,13 +11,9 @@ export default function Header({ user }) {
           <div
             className="header"
             style={{
-              backgroundImage: `url(${
-                API + asset.homeImg[0].formats.large.url
-              })`,
+              backgroundImage: `url(${API + asset.homeImg[0].url})`,
             }}
           >
-            {console.log(asset.homeImg[0].formats.large)}
-
             <h1>HAYALLERİNİ</h1>
             <h2>ERTELEME</h2>
           </div>
