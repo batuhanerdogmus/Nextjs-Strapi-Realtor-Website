@@ -8,12 +8,7 @@ export default function Header({ user }) {
     <div>
       {user.assets.map((asset) => (
         <HeaderContainer key={asset.id}>
-          <div
-            className="header"
-            style={{
-              backgroundImage: `url(${API + asset.homeImg[0].url})`,
-            }}
-          >
+          <div className="header">
             <h1>HAYALLERİNİ</h1>
             <h2>ERTELEME</h2>
           </div>
