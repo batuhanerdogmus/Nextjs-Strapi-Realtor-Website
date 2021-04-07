@@ -1,7 +1,6 @@
 import Link from "next/link";
 import picture from "../img/Picture1.jpg";
 import { HeaderContainer } from "../styles/StyledIndex";
-import API from "./constant";
 
 export default function Header({ user }) {
   return (
@@ -16,14 +15,11 @@ export default function Header({ user }) {
             <div className="section-container">
               <div className="section1">
                 <div className="section-img">
-                  {asset.profileImg.map((img) => (
-                    <img
-                      style={{ objectFit: "contain" }}
-                      key={img.id}
-                      src={API + img.formats.small.url}
-                      alt=""
-                    />
-                  ))}
+                  <img
+                    style={{ objectFit: "contain" }}
+                    src={asset.profileImg.map((img) => img.formats.large.url)}
+                    alt=""
+                  />
                 </div>
                 <div className="section-text">
                   <h2>{asset.home}</h2>

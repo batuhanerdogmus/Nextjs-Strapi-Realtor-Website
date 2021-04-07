@@ -2,6 +2,8 @@ import Link from "next/link";
 import { useState } from "react";
 import styled from "styled-components";
 import Bars from "../img/bars.png";
+import Image from "next/image";
+
 const Nav = styled.nav`
   height: 5rem;
   width: 100%;
@@ -31,10 +33,6 @@ const Nav = styled.nav`
   }
   .navBarIcon {
     display: none;
-
-    img {
-      width: 2rem;
-    }
   }
   @media screen and (max-width: 800px) {
     a {
@@ -74,11 +72,8 @@ const Nav = styled.nav`
       display: flex;
       justify-content: flex-end;
       z-index: 11;
-      margin-left: auto;
+      margin: 0 1rem 0 auto;
       cursor: pointer;
-      img {
-        margin: 0 1rem;
-      }
     }
     .navActive {
       opacity: 1;
@@ -100,7 +95,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navBarIcon" onClick={() => setShowNavbar(!showNavbar)}>
-        <img src={Bars} alt="" />
+        <Image src={Bars} alt="bars" width={32} height={32} layout="fixed" />
       </div>
       <div className={`navLinks ${showNavbar ? "navActive" : ""}`}>
         <Link href="/">

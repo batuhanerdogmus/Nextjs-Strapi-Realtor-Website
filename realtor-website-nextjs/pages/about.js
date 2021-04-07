@@ -36,7 +36,6 @@ export default function About() {
       body: JSON.stringify(messageInfos),
     });
 
-    console.log(messageInfos);
     const addResponse = await add;
 
     if (addResponse.ok) {
@@ -47,8 +46,6 @@ export default function About() {
     } else {
       alert("Bir hata oluştu, lütfen formu kontrol ediniz.");
     }
-
-    console.log(addResponse.status);
   }
   return (
     <Layout>

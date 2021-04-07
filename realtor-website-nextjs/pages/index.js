@@ -42,7 +42,9 @@ export default function Home({ users }) {
                       style={{ display: portfolio.onsale ? "flex" : "none" }}
                     >
                       <img
-                        src={API + portfolio.photos[0].formats.medium.url}
+                        src={portfolio.photos.map(
+                          (photo) => photo.formats.medium.url
+                        )}
                         alt={portfolio.title}
                       />
                       <span></span>
@@ -82,7 +84,9 @@ export default function Home({ users }) {
                     style={{ display: !portfolio.onsale ? "flex" : "none" }}
                   >
                     <img
-                      src={API + portfolio.photos[0].formats.medium.url}
+                      src={portfolio.photos.map(
+                        (photo) => photo.formats.medium.url
+                      )}
                       alt={portfolio.title}
                     />
                     <span></span>

@@ -65,7 +65,7 @@ const ImageSlider = ({ portfolio, pressedKeys }) => {
               >
                 <img
                   {...handlers}
-                  src={`${API}` + slide.formats.large.url}
+                  src={slide.formats.large.url}
                   alt="image"
                   className="image"
                   draggable="false"

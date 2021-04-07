@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   .header {
+    background-image: url("https://res.cloudinary.com/batuerd/image/upload/v1617656908/large_IMG_2776_593c8c381f.jpg");
     background-size: cover;
     background-position: center;
     height: 80vh;

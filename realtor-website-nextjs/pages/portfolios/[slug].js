@@ -117,7 +117,6 @@ export async function getStaticPaths() {
   const paths = portfolios.map((portfolio) => {
     return { params: { slug: `${slug(portfolio.title)}-${portfolio.id}` } };
   });
-  console.log(paths);
   return {
     paths,
     fallback: false,

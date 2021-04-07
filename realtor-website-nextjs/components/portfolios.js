@@ -177,7 +177,9 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
             >
               <div className="card-container">
                 <img
-                  src={`${API}` + portfolio.photos[0].formats.small.url}
+                  src={portfolio.photos.map(
+                    (photo) => photo.formats.medium.url
+                  )}
                   alt={portfolio.title}
                 />
                 <span></span>

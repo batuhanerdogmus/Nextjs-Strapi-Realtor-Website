@@ -2,6 +2,7 @@ import styled from "styled-components";
 import facebook from "../img/facebook.svg";
 import instagram from "../img/instagram.svg";
 import linkedin from "../img/linkedin.svg";
+import Image from "next/image";
 
 const StyledFooter = styled.div`
   width: 100%;
@@ -48,14 +49,18 @@ const StyledFooter = styled.div`
       font-style: italic;
     }
     a {
-      width: 2.5rem;
       display: flex;
-      transition: transform 0.3s ease-in-out;
       &:hover {
         transform: scale(1.2);
       }
+      img {
+        width: 2.5rem;
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
     }
   }
+
   @media screen and (max-width: 600px) {
     .address-container {
       margin-bottom: 0.5rem;
@@ -83,19 +88,34 @@ const Footer = () => {
               target="_blank"
               href={"https://www.facebook.com/meralegemen2004"}
             >
-              <img src={facebook} alt="facebook icon" />
+              <Image
+                src={facebook}
+                alt="facebook icon"
+                width={333.4}
+                height={333.4}
+              />
             </a>
             <a
               target="_blank"
               href={"https://www.instagram.com/meralegemenrw/"}
             >
-              <img src={instagram} alt="instagram icon" />
+              <Image
+                src={instagram}
+                alt="instagram icon"
+                width={333.4}
+                height={333.4}
+              />
             </a>
             <a
               target="_blank"
               href={"https://www.linkedin.com/in/meralegemenrw/"}
             >
-              <img src={linkedin} alt="linkedin icon" />
+              <Image
+                src={linkedin}
+                alt="linkedin icon"
+                width={333.4}
+                height={333.4}
+              />
             </a>
           </div>
           <p>Takipte Kalın</p>
