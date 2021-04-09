@@ -1,6 +1,6 @@
 import Link from "next/link";
 import picture from "../img/Picture1.jpg";
-import { HeaderContainer } from "../styles/StyledIndex";
+import { HeaderContainer, StyledButton } from "../styles/StyledIndex";
 
 export default function Header({ user }) {
   return (
@@ -25,7 +25,9 @@ export default function Header({ user }) {
                   <h2>{asset.home}</h2>
                   <p>{asset.aboutdescription}</p>
                   <Link href="/about/#contact">
-                    <button>İletişim</button>
+                    <StyledButton>
+                      <button className="contact">İletişim</button>
+                    </StyledButton>
                   </Link>
                 </div>
               </div>

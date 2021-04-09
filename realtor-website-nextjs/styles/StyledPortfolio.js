@@ -6,6 +6,18 @@ export const StyledPortfolios = styled.div`
   grid-gap: 1rem;
   grid-auto-rows: 32rem;
 
+  .error {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    h1 {
+      font-size: 2rem;
+      color: black;
+      align-items: center;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
   .container {
     margin-top: 3rem;
   }
@@ -67,9 +79,11 @@ export const StyledPortfolios = styled.div`
   p {
     text-align: center;
     color: white;
-    font-size: revert;
+    font-size: 1.3rem;
   }
-
+  h2 {
+    font-size: 1.5rem;
+  }
   h4 {
     z-index: 10;
     position: absolute;
@@ -173,6 +187,7 @@ export const SectionStyled = styled.div`
       position: absolute;
       left: 0.5rem;
       opacity: 0.6;
+      padding-top: 5px;
     }
 
     button {
@@ -240,10 +255,10 @@ export const SectionStyled = styled.div`
       }
       select,
       input {
-        padding-left: 35%;
+        padding-left: 30%;
       }
       .searchIcon {
-        left: 12%;
+        left: 7%;
       }
       .room,
       button {
@@ -310,9 +325,6 @@ export const StyledPortfolio = styled.div`
         height: 100%;
         display: flex;
         align-items: end;
-        svg {
-          fill: #131176;
-        }
       }
       .line {
         min-height: 90%;
@@ -372,7 +384,7 @@ export const StyledPortfolio = styled.div`
     }
     .img-container {
       img {
-        max-width: 7rem;
+        max-width: 9rem;
       }
     }
     .info {
@@ -412,7 +424,7 @@ export const StyledPortfolio = styled.div`
     }
     .img-container {
       img {
-        max-width: 7rem;
+        max-width: 7.5rem;
       }
     }
     .info {
@@ -445,79 +457,3 @@ export const StyledPortfolio = styled.div`
     }
   }
 `;
-
-/*
-export const StyledPortfolio = styled.div`
-
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-top: 6rem;
-    .card {
-      text-align: center;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      h1 {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-    }
-    .logo-wrapper {
-      text-align: center;
-      width: 26rem;
-    }
-    .logo-container {
-      display: flex;
-      width: 100%;
-      height: 8rem;
-      justify-content: space-between;
-      .logo-detail {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        .logo-text {
-          width: min-content;
-          display: flex;
-          flex-direction: column;
-        }
-        h4 {
-          font-size: 1rem;
-        }
-        a {
-          font-size: 1rem;
-        }
-      }
-      .logo {
-        width: 2.5rem;
-        height: 100%;
-        display: flex;
-        align-items: end;
-        svg {
-          fill: #131176;
-        }
-      }
-      .line {
-        min-height: 90%;
-        background-color: #131176;
-        border: 3px solid #131176;
-        white-space: pre-wrap;
-      }
-    }
-  }
-  .description {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-
-    & * {
-      font-size: revert;
-      font-weight: revert;
-      text-align: center;
-    }
-  }
-`; */

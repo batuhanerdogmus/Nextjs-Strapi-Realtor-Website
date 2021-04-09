@@ -75,24 +75,6 @@ export const HeaderContainer = styled.div`
       max-width: 85%;
       line-height: 1.6;
     }
-
-    button {
-      font-size: 1.3rem;
-      color: var(--button-color);
-      background-color: var(--button-background-color);
-      display: inline-block;
-      padding: 0.3rem 1.2rem;
-      border-radius: 2rem;
-      box-sizing: border-box;
-      text-align: center;
-      border: 0;
-      transition: all 0.2s;
-      &:hover {
-        background-color: var(--button-hover-color);
-        font-size: 1.4rem;
-        letter-spacing: 2px;
-      }
-    }
   }
   @media screen and (max-width: 1270px) {
     .section-text {
@@ -114,9 +96,6 @@ export const HeaderContainer = styled.div`
     }
     .section-text {
       font-size: 1rem;
-      button {
-        width: 7rem;
-      }
     }
   }
   @media screen and (max-width: 600px) {
@@ -150,9 +129,6 @@ export const HeaderContainer = styled.div`
     .section-text {
       width: 100%;
       font-size: 0.9rem;
-      button {
-        margin-bottom: 1rem;
-      }
     }
   }
 `;
@@ -227,6 +203,7 @@ export const PortfolioContainer = styled.div`
     flex-direction: column;
     text-transform: capitalize;
   }
+
   h2,
   h1,
   h3,
@@ -234,9 +211,11 @@ export const PortfolioContainer = styled.div`
   p {
     text-align: center;
     color: white;
-    font-size: revert;
+    font-size: 1.4rem;
   }
-
+  h2 {
+    font-size: 1.7rem;
+  }
   h4 {
     z-index: 10;
     position: absolute;
@@ -305,41 +284,48 @@ export const PortfolioContainer = styled.div`
     }
   }
 `;
-export const StyledButton = styled.button`
-  position: relative;
-  left: 50%;
-  font-size: 1.5rem;
-  padding: 6px 25px;
-  border-radius: 0;
-  transform: translateX(-50%);
-  border-radius: 2rem;
-  color: var(--button-color);
-  background-color: var(--button-background-color);
-  box-sizing: border-box;
-  text-align: center;
-  border: 0;
-  margin-bottom: 2rem;
-  box-shadow: -5px 8px 9px -6px black;
-  text-shadow: -1px 1px 6px black;
-
-  transition: all 0.3s;
-
-  &:hover {
-    background-color: var(--button-hover-color);
-    font-size: 1.6em;
-    letter-spacing: 2px;
-    text-shadow: -2px 2px 7px black;
+export const StyledButton = styled.div`
+  .contact {
+    left: 0;
+    transform: translateX(0);
   }
-  @media screen and (max-width: 1100px) {
-    font-size: 1.2rem;
-    padding: 5px 18px;
+  button {
+    position: relative;
+    left: 50%;
+    font-size: 1.5rem;
+    padding: 6px 25px;
+    border-radius: 0;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    box-sizing: border-box;
+    text-align: center;
+    border: 0;
+    margin-bottom: 2rem;
+    box-shadow: -5px 8px 9px -6px black;
+    text-shadow: -1px 1px 6px black;
+
+    transition: all 0.3s;
+
     &:hover {
-      font-size: 1.3rem;
+      background-color: var(--button-hover-color);
+      font-size: 1.6rem;
+      letter-spacing: 2px;
+      text-shadow: -2px 2px 7px black;
     }
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 1.1rem;
-    padding: 5px 15px;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 1.2rem;
+      padding: 5px 18px;
+      &:hover {
+        font-size: 1.3rem;
+      }
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 1.1rem;
+      padding: 5px 15px;
+    }
   }
 `;
 
@@ -355,20 +341,6 @@ export const SellContainer = styled.div`
     font-size: 1.2rem;
   }
 
-  button {
-    font-size: 1.2rem;
-    padding: 2px 22px;
-    margin-left: 1rem;
-    color: var(--button-color);
-    background-color: var(--button-background-color);
-    border: 0;
-    transition: all 0.2s;
-    &:hover {
-      background-color: var(--button-hover-color);
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-    }
-  }
   @media screen and (max-width: 800px) {
     h1 {
       font-size: 1.8rem;
@@ -385,13 +357,6 @@ export const SellContainer = styled.div`
     }
     h3 {
       font-size: 0.9rem;
-    }
-
-    button {
-      margin-left: 0;
-      width: 8rem;
-      font-size: 1rem;
-      padding: 3px;
     }
   }
 `;

@@ -17,15 +17,6 @@
   --font-family: "Poppins", "sans-serif";
   --box-shadow: 8px 2px 8px rgba(0, 0, 0, 0.05);
 }
-[data-theme="dark"] {
-  --text-color: #f0f0f0;
-  --text-color-secondary: #b3c5cd;
-  --primary-color: #21b6b7;
-  --background-color: #767577;
-  --background-color-dark: #24252a;
-  --background-color-light: #3c393f;
-  --button-background-color: #006c86;
-}
 
 html,
 body {

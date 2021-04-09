@@ -5,6 +5,11 @@ import linkedin from "../img/linkedin.svg";
 import Image from "next/image";
 
 const StyledFooter = styled.div`
+  footer {
+    text-align: center;
+    background-color: var(--background-color);
+    width: 100%;
+  }
   width: 100%;
   text-transform: capitalize;
   color: var(--text-color);
@@ -62,6 +67,9 @@ const StyledFooter = styled.div`
   }
 
   @media screen and (max-width: 600px) {
+    footer {
+      font-size: 0.7rem;
+    }
     .address-container {
       margin-bottom: 0.5rem;
       address {
@@ -131,10 +139,8 @@ const Footer = () => {
             <p>Konyaaltı/Antalya</p>
           </address>
         </div>
+        <footer>Copyright ©2021 Created by Batuhan Erdogmus</footer>
       </StyledFooter>
-      <footer style={{ textAlign: "center" }}>
-        Copyright ©2021 Created by Batuhan Erdogmus
-      </footer>
     </>
   );
 };

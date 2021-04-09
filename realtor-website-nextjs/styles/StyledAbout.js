@@ -89,7 +89,7 @@ export const StyledAboutPage = styled.div`
   .risks-card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, 24rem);
-    grid-auto-rows: 34rem;
+    grid-auto-rows: 36rem;
     grid-gap: 3rem;
     justify-content: center;
     margin: auto;

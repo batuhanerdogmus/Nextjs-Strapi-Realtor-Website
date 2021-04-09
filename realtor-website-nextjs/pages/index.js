@@ -60,7 +60,9 @@ export default function Home({ users }) {
                 ))}
             </PortfolioContainer>
             <Link href="/portfolios">
-              <StyledButton>Portföyler</StyledButton>
+              <StyledButton>
+                <button>Portföyler</button>
+              </StyledButton>
             </Link>
             <SellContainer>
               <h1>Mülkünüzün Bugünkü Değerini Öğrenmek İstermisiniz?</h1>
@@ -70,7 +72,9 @@ export default function Home({ users }) {
               </h3>
 
               <Link href="/about/#contact">
-                <button>İletişim</button>
+                <StyledButton>
+                  <button className="contact">İletişim</button>
+                </StyledButton>
               </Link>
             </SellContainer>
             <PortfolioText>Yaptığım İşlemler</PortfolioText>

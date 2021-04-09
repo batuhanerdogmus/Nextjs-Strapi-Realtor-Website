@@ -6,13 +6,10 @@ import Portfolios from "../../components/portfolios";
 
 const Portfolio = ({ portfolios }) => {
   const portfolio = portfolios.map((Portfolio) => Portfolio);
-
   const [keyWord, setKeyWord] = useState("");
 
-  const filteredByInput = portfolio.filter(
-    (portfolio) =>
-      portfolio.title.toLowerCase().includes(keyWord) ||
-      portfolio.description.toLowerCase().includes(keyWord)
+  const filteredByInput = portfolio.filter((portfolio) =>
+    portfolio.title.toLowerCase().includes(keyWord)
   );
 
   return (
