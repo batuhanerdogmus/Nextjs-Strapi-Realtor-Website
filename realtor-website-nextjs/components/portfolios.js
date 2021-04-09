@@ -127,7 +127,7 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
               <select className="room" id="room">
                 <option>Oda Sayısı</option>
                 {uniqueRoomTypes.map((roomType) => (
-                  <option key={roomType}>
+                  <option key={roomType} onClick={SelectOnClickHandler}>
                     {roomType} (
                     {
                       (!roomFilter ? filtrdRoomTypes : roomTypes).filter(
@@ -143,7 +143,7 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
               <select className="type" id="type">
                 <option>Konut Tipi</option>
                 {uniqueTypes.map((type) => (
-                  <option key={type}>
+                  <option key={type} onClick={TypeOnClickHandler}>
                     {type} (
                     {
                       (!typeFilter ? fiterdTypes : types).filter(
@@ -176,11 +176,10 @@ const Portfolios = ({ portfolio, setKeyWord }) => {
             >
               <div className="card-container">
                 <img
-                  src={portfolio.photos.map(
-                    (photo) => photo.formats.medium.url
-                  )}
+                  src={portfolio.photos[0].formats.medium.url}
                   alt={portfolio.title}
                 />
+
                 <span></span>
                 <div className="content">
                   <h2>{portfolio.title}</h2>

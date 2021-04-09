@@ -3,7 +3,6 @@ import { useSwipeable } from "react-swipeable";
 import { StyledSlider } from "../styles/StyledImageSlider";
 import expand from "../img/expand.svg";
 import xIcon from "../img/x-icon.svg";
-import API from "./constant";
 
 const ImageSlider = ({ portfolio, pressedKeys }) => {
   const [current, setCurrent] = useState(0);
